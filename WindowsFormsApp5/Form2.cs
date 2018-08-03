@@ -32,6 +32,7 @@ namespace WindowsFormsApp5
         }
         public void Retorna_Informações()
         {
+            int row = ((int)CbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Usuario", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
@@ -47,8 +48,8 @@ namespace WindowsFormsApp5
                     cmd.Parameters.AddWithValue("@login" ,TxtLogin.Text);
                     cmd.Parameters.AddWithValue("@email" ,TxtSenha.Text);
                     cmd.Parameters.AddWithValue("@senha" ,TxtSenha.Text);
-                    cmd.Parameters.AddWithValue("@Ccargo",);
-
+                    cmd.Parameters.AddWithValue("@Ccargo",row);
+                    //teste
                 }
             }
             catch (Exception ex)
