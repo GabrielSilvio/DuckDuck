@@ -29,7 +29,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Edita_login();
         }
         public void Retorna_Informações()
         {
@@ -69,13 +69,14 @@ namespace WindowsFormsApp5
         }
         public void Edita_login()
         {
+            int cCargo = ((int)CbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand    cmd = new SqlCommand("s_edita_Login", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.Parameters.AddWithValue("@login" , TxtLogin.Text);
             cmd.Parameters.AddWithValue("@nome"  , TxtNome.Text);
             cmd.Parameters.AddWithValue("@email" , TxtEmail.Text);
-            cmd.Parameters.AddWithValue("@cCargo", CbxCargo.Text);
+            cmd.Parameters.AddWithValue("@cCargo", cCargo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
