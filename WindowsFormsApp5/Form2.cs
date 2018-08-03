@@ -14,10 +14,11 @@ namespace WindowsFormsApp5
     public partial class Form2 : Form
     {
         public int codigo;
-        public Form2(Form1 telacadastro)   
+        public Form2(Form1 telacadastro,int codigo)   
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
+            this.codigo = codigo;
             Retorna_Informações();
         }
         Form1 telacadastro;
@@ -32,7 +33,6 @@ namespace WindowsFormsApp5
         }
         public void Retorna_Informações()
         {
-            int row = ((int)CbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Usuario", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
@@ -40,16 +40,15 @@ namespace WindowsFormsApp5
             con.Open();
             try
             {
-                
                 SqlDataReader i = cmd.ExecuteReader();
-                while (i.Read())
+                if (i.Read())
                 {
-                    cmd.Parameters.AddWithValue("@nome"  ,TxtNome.Text);
-                    cmd.Parameters.AddWithValue("@login" ,TxtLogin.Text);
-                    cmd.Parameters.AddWithValue("@email" ,TxtSenha.Text);
-                    cmd.Parameters.AddWithValue("@senha" ,TxtSenha.Text);
-                    cmd.Parameters.AddWithValue("@Ccargo",row);
-                    //teste
+                    TxtNome.Text  = i["nome"].ToString();
+                    TxtLogin.Text = i["login"].ToString();
+                    TxtSenha.Text = i["senha"].ToString();
+                    TxtSenhaConf.Text = TxtSenha.Text;
+                    TxtEmail.Text = i["email"].ToString();
+                    CbxCargo.Text = i["cargo"].ToString();
                 }
             }
             catch (Exception ex)

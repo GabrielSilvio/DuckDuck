@@ -75,11 +75,13 @@ namespace WindowsFormsApp5
                 int i = cmd.ExecuteNonQuery();
                 FrmPri frmPri = new FrmPri(login);
                 this.Hide();
+                con.Close();
                 frmPri.ShowDialog();
+                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
             finally
             {
