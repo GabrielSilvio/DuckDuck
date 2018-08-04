@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
-    public partial class Form1 : Form
+    public partial class FornecedorCRUD : Form
     {
-        public Form1()
+        public FornecedorCRUD()
         {
             InitializeComponent();
 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cadastrar cadastrar = new Cadastrar(this);
+            CadastrarFornecedor cadastrar = new CadastrarFornecedor(this);
             cadastrar.ShowDialog();
 
         }
@@ -204,7 +204,7 @@ namespace WindowsFormsApp5
         {
             if (codigo != -100)
             { 
-                Form2 form2 = new Form2(this, codigo);
+                EditarFornecedor form2 = new EditarFornecedor(this, codigo);
                 form2.ShowDialog();
             }
         }

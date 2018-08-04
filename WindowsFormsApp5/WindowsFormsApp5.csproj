@@ -54,28 +54,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro usuario.cs">
+    <Compile Include="Fornecedor\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro usuario.Designer.cs">
-      <DependentUpon>Cadastro usuario.cs</DependentUpon>
+    <Compile Include="Fornecedor\Cadastrar.Designer.cs">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\FornecedorCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\FornecedorCRUD.Designer.cs">
+      <DependentUpon>FornecedorCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\UsuarioCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\UsuarioCRUD.Designer.cs">
+      <DependentUpon>UsuarioCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Duck_DuckDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Cadastrar.cs">
+    <Compile Include="Usuario\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastrar.Designer.cs">
+    <Compile Include="Usuario\Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Usuario\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Usuario\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -91,14 +109,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cadastro usuario.resx">
-      <DependentUpon>Cadastro usuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cadastrar.resx">
+    <EmbeddedResource Include="Fornecedor\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Fornecedor\FornecedorCRUD.resx">
+      <DependentUpon>FornecedorCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\UsuarioCRUD.resx">
+      <DependentUpon>UsuarioCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

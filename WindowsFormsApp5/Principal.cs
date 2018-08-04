@@ -62,7 +62,13 @@ namespace WindowsFormsApp5
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            Form1 user = new Form1();
+            UsuarioCRUD user = new UsuarioCRUD();
+            user.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FornecedorCRUD user = new FornecedorCRUD();
             user.ShowDialog();
         }
     }

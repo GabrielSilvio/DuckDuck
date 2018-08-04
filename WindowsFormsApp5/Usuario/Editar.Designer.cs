@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp5
 {
-    partial class Form2
+    partial class EditarUsuario
     {
         /// <summary>
         /// Required designer variable.

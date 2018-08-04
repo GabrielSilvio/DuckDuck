@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp5
 {
-    partial class Cadastrar
+    partial class CadastrarFornecedor
     {
         /// <summary>
         /// Required designer variable.

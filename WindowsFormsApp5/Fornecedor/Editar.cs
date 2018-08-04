@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
+
 namespace WindowsFormsApp5
 {
-    public partial class Form2 : Form
+    public partial class EditarFornecedor : Form
     {
         public int codigo;
-        public Form2(Form1 telacadastro,int codigo)   
+        public FornecedorCRUD telacadastro;
+
+        public EditarFornecedor(FornecedorCRUD telacadastro, int codigo)   
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
             this.codigo = codigo;
             Retorna_Informações();
         }
-        Form1 telacadastro;
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
