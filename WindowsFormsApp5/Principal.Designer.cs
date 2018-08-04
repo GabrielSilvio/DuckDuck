@@ -158,7 +158,6 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button2.Image = global::WindowsFormsApp5.Properties.Resources.waiter;
             this.button2.Location = new System.Drawing.Point(0, 212);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 127);
