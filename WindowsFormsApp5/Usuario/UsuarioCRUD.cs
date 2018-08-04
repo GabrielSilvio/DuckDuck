@@ -58,7 +58,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cadastrar cadastrar = new Cadastrar(this);
+            CadastrarUsuario cadastrar = new CadastrarUsuario(this);
             cadastrar.ShowDialog();
 
         }
@@ -202,7 +202,7 @@ namespace WindowsFormsApp5
         {
             if (codigo != -100)
             { 
-                Editar form2 = new Editar(this, codigo);
+                EditarUsuario form2 = new EditarUsuario(this, codigo);
                 form2.ShowDialog();
             }
         }

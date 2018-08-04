@@ -209,7 +209,7 @@ namespace WindowsFormsApp5
             }
         }
 
-        private void Form1_SizeChanged(object sender, EventArgs e)
+        private void FornecedorCRUD_SizeChanged(object sender, EventArgs e)
         {
             GridTotal.Columns[0].Width = this.Size.Width / 2;
         }

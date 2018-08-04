@@ -14,9 +14,9 @@ namespace WindowsFormsApp5
     public partial class EditarUsuario : Form
     {
         public int codigo;
-        private EditarUsuario telacadastro;
+        private UsuarioCRUD telacadastro;
 
-        public EditarUsuario(EditarUsuario telacadastro, int codigo)   
+        public EditarUsuario(UsuarioCRUD telacadastro, int codigo)   
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
