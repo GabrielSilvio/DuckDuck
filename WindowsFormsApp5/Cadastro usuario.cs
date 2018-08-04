@@ -151,10 +151,17 @@ namespace WindowsFormsApp5
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.ErrorDialog = false;
+                //Faz o programa não fechar
+                startInfo.RedirectStandardOutput = true;
+                startInfo.RedirectStandardError = true;
+                startInfo.UseShellExecute = false;
+                startInfo.CreateNoWindow = true;
+
                 startInfo.FileName = "cmd.exe";
                 startInfo.Arguments = "/C start data.csv > nul";
                 process.StartInfo = startInfo;
                 process.Start();
+
             }
             catch (Exception ex)
             {
