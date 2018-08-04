@@ -81,7 +81,7 @@ namespace WindowsFormsApp5
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
             finally
             {
