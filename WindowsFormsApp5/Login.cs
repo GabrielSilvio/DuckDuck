@@ -45,12 +45,6 @@ namespace WindowsFormsApp5
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            // FrmCadastro  frmCadastro = new   FrmCadastro();
-            //FrmCadastro     frmlogin = new   FrmCadastro();
-            //frmlogin.Close();
-            // frmCadastro.Show();
-
-
         }
 
         private void label3_Click(object sender, EventArgs e)
