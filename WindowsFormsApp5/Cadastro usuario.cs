@@ -2,8 +2,10 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
-using Microsoft;
 
 namespace WindowsFormsApp5
 {
@@ -127,7 +129,37 @@ namespace WindowsFormsApp5
 
         }
 
+        private void ExportToExcel()
+        {
+            var sb = new StringBuilder();
 
+            var headers = GridTotal.Columns.Cast<DataGridViewColumn>();
+            sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
+
+            foreach (DataGridViewRow row in GridTotal.Rows)
+            {
+                var cells = row.Cells.Cast<DataGridViewCell>();
+                sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
+            }
+            var fs = File.Open("data.csv", FileMode.OpenOrCreate, FileAccess.Write);
+            var sw = new StreamWriter(fs);
+            sw.Write(sb.ToString());
+            try
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.ErrorDialog = false;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C start data.csv > nul";
+                process.StartInfo = startInfo;
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
 
         void Excluir_cadastro()
@@ -176,49 +208,7 @@ namespace WindowsFormsApp5
 
         private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
-        Microsoft.Office.Interop.Excel.Application XcelApp = new
-        Microsoft.Office.Interop.Excel.Application();
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-
-            if (GridTotal.Rows.Count > 0)
-            {
-                try
-                {
-                    XcelApp.Application.Workbooks.Add(Type.Missing);
-                    for (int i = 1; i < GridTotal.Columns.Count + 1; i++)
-                    {
-                        XcelApp.Cells[1, i] = GridTotal.Columns[i - 1].HeaderText;
-                    }
-                    //
-                    for (int i = 0; i < GridTotal.Rows.Count - 1; i++)
-                    {
-                        for (int j = 0; j < GridTotal.Columns.Count; j++)
-                        {
-                            XcelApp.Cells[i + 2, j + 1] = GridTotal.Rows[i].Cells[j].Value.ToString();
-                        }
-                    }
-                    //
-                    XcelApp.Columns.AutoFit();
-                    //
-                    XcelApp.Visible = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro : " + ex.Message);
-                    XcelApp.Quit();
-                }
-            }
-        }
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
-
-
-
-      
