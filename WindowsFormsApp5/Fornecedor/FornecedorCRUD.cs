@@ -15,17 +15,17 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
 
-            Conexao_user();
+            Conexao_fornecedor();
 
         }
 
 
-        public void Conexao_user()
+        public void Conexao_fornecedor()
         {
             lblMensagem.Visible = false;
 
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Retorna_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Fornecedor", con);
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -35,7 +35,7 @@ namespace WindowsFormsApp5
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[4], i[5]);
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
 
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -93,7 +93,7 @@ namespace WindowsFormsApp5
         public void Atualiza_Lista()
         {
             GridTotal.Rows.Clear();
-            Conexao_user();
+            Conexao_fornecedor();
         }
         public int codigo = -100;
         private void GridTotal_CellClick(object sender, DataGridViewCellEventArgs e)
