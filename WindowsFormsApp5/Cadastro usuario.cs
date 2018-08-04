@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
@@ -24,6 +19,8 @@ namespace WindowsFormsApp5
 
         public void Conexao_user()
         {
+            lblMensagem.Visible = false;
+
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Retorna_Login", con);
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
@@ -49,7 +46,8 @@ namespace WindowsFormsApp5
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               lblMensagem.Visible = true;
+               lblMensagem.Text=("DADOS NÃO ENCONTRADOS POR FAVOR VERIFIQUE O NOME DIGITADO");
             }
             finally
             {
@@ -179,6 +177,7 @@ namespace WindowsFormsApp5
         {
 
         }
+
     }
 }
 
