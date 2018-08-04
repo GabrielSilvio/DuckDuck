@@ -50,16 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\Desktop\Cadastro usuario.cs">
+    <Compile Include="Cadastro usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\Desktop\Cadastro usuario.Designer.cs">
+    <Compile Include="Cadastro usuario.Designer.cs">
       <DependentUpon>Cadastro usuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Duck_DuckDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Duck_DuckDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,7 +87,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\..\..\Desktop\Cadastro usuario.resx">
+    <EmbeddedResource Include="Cadastro usuario.resx">
       <DependentUpon>Cadastro usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastrar.resx">
@@ -119,14 +114,16 @@
     </Compile>
     <None Include="Duck_DuckDataSet.xsc">
       <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
+      <Link>Duck_DuckDataSet.xsc</Link>
     </None>
     <None Include="Duck_DuckDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Duck_DuckDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Link>Duck_DuckDataSet.xsd</Link>
     </None>
     <None Include="Duck_DuckDataSet.xss">
       <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
+      <Link>Duck_DuckDataSet.xss</Link>
     </None>
     <None Include="Duck_DuckDataSet1.xsc">
       <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
