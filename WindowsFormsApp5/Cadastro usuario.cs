@@ -2,6 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp5
@@ -126,7 +129,45 @@ namespace WindowsFormsApp5
 
         }
 
+        private void ExportToExcel()
+        {
+            var sb = new StringBuilder();
 
+            var headers = GridTotal.Columns.Cast<DataGridViewColumn>();
+            sb.AppendLine(string.Join(";", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
+
+            foreach (DataGridViewRow row in GridTotal.Rows)
+            {
+                var cells = row.Cells.Cast<DataGridViewCell>();
+                sb.AppendLine(string.Join(";", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
+            }
+            var fs = File.Open("data.csv", FileMode.OpenOrCreate, FileAccess.Write);
+            var sw = new StreamWriter(fs, Encoding.UTF8);
+            sw.Write(sb.ToString());
+            sw.Close();
+            try
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.ErrorDialog = false;
+                //Faz o programa não fechar
+                startInfo.RedirectStandardOutput = true;
+                startInfo.RedirectStandardError = true;
+                startInfo.UseShellExecute = false;
+                startInfo.CreateNoWindow = true;
+
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C start data.csv > nul";
+                process.StartInfo = startInfo;
+                process.Start();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
 
         void Excluir_cadastro()
@@ -175,11 +216,14 @@ namespace WindowsFormsApp5
 
         private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }
 }
-
-
-
-      
