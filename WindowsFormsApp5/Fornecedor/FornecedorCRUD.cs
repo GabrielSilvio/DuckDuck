@@ -43,15 +43,17 @@ namespace WindowsFormsApp5
                     this.GridTotal.RowsDefaultCellStyle.BackColor = Color.Bisque;
                     this.GridTotal.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
                     contador++;
-
+                    
                 }
                 lblContador.Text = contador.ToString() + " Registros";
+                NenhumDados = false;
             }
             catch (Exception ex)
             {
                lblContador.Text = "0 Registros";
                codigo = -100;
                lblMensagem.Visible = true;
+               NenhumDados = true;
                lblMensagem.Text=("DADOS NÃO ENCONTRADOS POR FAVOR VERIFIQUE O NOME DIGITADO");
             }
             finally
@@ -130,9 +132,14 @@ namespace WindowsFormsApp5
             }
 
         }
+        public bool NenhumDados = false;
 
         private void ExportToExcel()
         {
+            
+            if (NenhumDados) {
+                return;
+            }
             var sb = new StringBuilder();
 
             var headers = GridTotal.Columns.Cast<DataGridViewColumn>();
