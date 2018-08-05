@@ -27,27 +27,19 @@ namespace WindowsFormsApp5
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if (txtSenha.Text == TxtSenhaConf.Text)
             {
-                Cria_Login();
+                Cria_Login_Fornecedor();
                 telacadastro.Atualiza_Lista();
             }
-            else
-                MessageBox.Show("As senhas não colidem");
-        }
 
-
-        private void Cria_Login()
+        private void Cria_Login_Fornecedor()
         {
-            int row = ((int)cbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Cria_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Cria_Fornecedor", con);
             cmd.Parameters.AddWithValue("@nome",  TxtNome.Text);
-            cmd.Parameters.AddWithValue("@login", TxtLogin.Text);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
-            cmd.Parameters.AddWithValue("@Ccargo", row);
+            cmd.Parameters.AddWithValue("@telefone", TxtTelefone.Text);
+            cmd.Parameters.AddWithValue("@email", TxtEmail.Text);
+            cmd.Parameters.AddWithValue("@descricao", TxtDescricao.Text);
             //seta o valor apra inserção da procedure
             
             

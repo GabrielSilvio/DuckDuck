@@ -107,14 +107,14 @@ namespace WindowsFormsApp5
         void Edita_cadastro()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Exclui_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Fornecedor", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
             {
                 int i = cmd.ExecuteNonQuery();
-                MessageBox.Show("Cadastro excluido com sucesso");
+                MessageBox.Show("Cadastro  com sucesso");
                 Atualiza_Lista();
             }
             catch (Exception ex)
@@ -173,7 +173,7 @@ namespace WindowsFormsApp5
         void Excluir_cadastro()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Exclui_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Exclui_Fornecedor", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();

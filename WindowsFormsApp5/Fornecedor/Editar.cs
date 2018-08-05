@@ -28,7 +28,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Edita_login();
+            Edita_Fornecedor();
         }
         public void Retorna_Informações()
         {
@@ -43,11 +43,9 @@ namespace WindowsFormsApp5
                 if (i.Read())
                 {
                     TxtNome.Text  = i["nome"].ToString();
-                    TxtLogin.Text = i["login"].ToString();
-                    TxtSenha.Text = i["senha"].ToString();
-                    TxtSenhaConf.Text = TxtSenha.Text;
+                    TxtTelefone.Text = i["login"].ToString();
+                    TxtDescricao.Text = i["senha"].ToString();
                     TxtEmail.Text = i["email"].ToString();
-                    CbxCargo.Text = i["cargo"].ToString();
                 }
             }
             catch (Exception ex)
@@ -66,16 +64,15 @@ namespace WindowsFormsApp5
             this.t_CargoTableAdapter.Fill(this.duck_DuckDataSet1.t_Cargo);
 
         }
-        public void Edita_login()
+        public void Edita_Fornecedor()
         {
-            int cCargo = ((int)CbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand    cmd = new SqlCommand("s_edita_Login", con);
+            SqlCommand    cmd = new SqlCommand("s_Edita_Dados_Fornecedor", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
-            cmd.Parameters.AddWithValue("@login" , TxtLogin.Text);
-            cmd.Parameters.AddWithValue("@nome"  , TxtNome.Text);
-            cmd.Parameters.AddWithValue("@email" , TxtEmail.Text);
-            cmd.Parameters.AddWithValue("@cCargo", cCargo);
+            cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
+            cmd.Parameters.AddWithValue("@telefone" , TxtTelefone.Text);
+            cmd.Parameters.AddWithValue("@email"  , TxtEmail.Text);
+            cmd.Parameters.AddWithValue("@descricao" , TxtDescricao.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
@@ -83,9 +80,6 @@ namespace WindowsFormsApp5
                 int i = cmd.ExecuteNonQuery();
                 MessageBox.Show("Cadastro editado com sucesso");
                 telacadastro.Atualiza_Lista();
-
-
-
             }
             catch (Exception ex)
             {
@@ -98,5 +92,3 @@ namespace WindowsFormsApp5
         }
     }
 }
-
-

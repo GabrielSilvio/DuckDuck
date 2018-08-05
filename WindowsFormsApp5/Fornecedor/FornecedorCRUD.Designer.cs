@@ -113,7 +113,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(374, 24);
+            this.label4.Location = new System.Drawing.Point(365, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(356, 25);
             this.label4.TabIndex = 1004;
@@ -214,7 +214,7 @@
             this.lblContador.AutoSize = true;
             this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContador.ForeColor = System.Drawing.Color.White;
-            this.lblContador.Location = new System.Drawing.Point(278, 23);
+            this.lblContador.Location = new System.Drawing.Point(354, 24);
             this.lblContador.Name = "lblContador";
             this.lblContador.Size = new System.Drawing.Size(25, 25);
             this.lblContador.TabIndex = 1004;
