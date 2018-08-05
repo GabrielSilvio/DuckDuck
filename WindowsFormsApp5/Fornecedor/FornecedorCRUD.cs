@@ -49,6 +49,7 @@ namespace WindowsFormsApp5
             }
             catch (Exception ex)
             {
+               codigo = -100;
                lblMensagem.Visible = true;
                lblMensagem.Text=("DADOS NÃO ENCONTRADOS POR FAVOR VERIFIQUE O NOME DIGITADO");
             }
@@ -87,7 +88,7 @@ namespace WindowsFormsApp5
 
 
         private void lblPesq_TextChanged(object sender, EventArgs e)
-        {
+       {
             Atualiza_Lista();
         }
         public void Atualiza_Lista()
