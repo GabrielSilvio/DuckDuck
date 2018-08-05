@@ -72,6 +72,24 @@
     <Compile Include="Fornecedor\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto%28Estoque%29\Cadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Cadastrar.Designer.cs">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\ProdutoCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\ProdutoCRUD.Designer.cs">
+      <DependentUpon>ProdutoCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\UsuarioCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,16 +113,16 @@
     <Compile Include="Usuario\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms Principais\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms Principais\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="Forms Principais\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Forms Principais\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -118,6 +136,15 @@
     <EmbeddedResource Include="Fornecedor\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\ProdutoCRUD.resx">
+      <DependentUpon>ProdutoCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\UsuarioCRUD.resx">
       <DependentUpon>UsuarioCRUD.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,10 +154,10 @@
     <EmbeddedResource Include="Usuario\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms Principais\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Forms Principais\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -238,5 +265,6 @@
   <ItemGroup>
     <None Include="Resources\excel.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

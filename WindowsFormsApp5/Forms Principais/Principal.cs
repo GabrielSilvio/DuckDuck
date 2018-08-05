@@ -60,8 +60,30 @@ namespace WindowsFormsApp5
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FornecedorCRUD user = new FornecedorCRUD();
-            user.ShowDialog();
+            FornecedorCRUD fornecedor = new FornecedorCRUD();
+            fornecedor.ShowDialog();
+        }
+
+        private void lblSair_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            string message = "Você realmente deseja sair?";
+            string caption = "Confirmação";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Mensagem se deseja realmente sair.
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

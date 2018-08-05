@@ -42,10 +42,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -193,11 +195,13 @@
             // 
             // LblUser
             // 
-            this.LblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblUser.AutoSize = true;
             this.LblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUser.ForeColor = System.Drawing.Color.White;
-            this.LblUser.Location = new System.Drawing.Point(784, 36);
+            this.LblUser.Location = new System.Drawing.Point(1052, 679);
             this.LblUser.Name = "LblUser";
             this.LblUser.Size = new System.Drawing.Size(49, 20);
             this.LblUser.TabIndex = 1001;
@@ -209,14 +213,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(25)))));
-            this.panel2.Controls.Add(this.LblUser);
+            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Location = new System.Drawing.Point(152, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(892, 85);
+            this.panel2.Size = new System.Drawing.Size(990, 85);
             this.panel2.TabIndex = 1002;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
@@ -226,7 +229,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(272, 30);
+            this.label3.Location = new System.Drawing.Point(321, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(358, 25);
             this.label3.TabIndex = 1003;
@@ -234,25 +237,44 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.CausesValidation = false;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label4.Location = new System.Drawing.Point(660, 36);
+            this.label4.Location = new System.Drawing.Point(928, 679);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 1001;
             this.label4.Text = "Logado como:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::WindowsFormsApp5.Properties.Resources.power_button_off;
+            this.pictureBox3.Location = new System.Drawing.Point(919, 25);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1005;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // FrmPri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1044, 708);
+            this.ClientSize = new System.Drawing.Size(1142, 708);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.LblUser);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -265,7 +287,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +309,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BtnEstoque;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp5
 {
-    partial class FornecedorCRUD
+    partial class ProdutoCRUD
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FornecedorCRUD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoCRUD));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbluser = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,6 +59,11 @@
             this.tloginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tloginBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.GridTotal = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlPesquisa = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -67,11 +71,6 @@
             this.lblMensagem = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -99,7 +98,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -115,9 +113,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(365, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(356, 25);
+            this.label4.Size = new System.Drawing.Size(305, 25);
             this.label4.TabIndex = 1004;
-            this.label4.Text = "Gerenciamento de Fornecedores";
+            this.label4.Text = "Gerenciamento de Produtos";
             // 
             // label1
             // 
@@ -151,18 +149,6 @@
             this.pictureBox1.TabIndex = 1001;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(381, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(304, 25);
-            this.label5.TabIndex = 1000;
-            this.label5.Text = "Gerenciamento de Usuarios";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -187,9 +173,9 @@
             this.lbluser.ForeColor = System.Drawing.Color.White;
             this.lbluser.Location = new System.Drawing.Point(12, 28);
             this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(185, 20);
+            this.lbluser.Size = new System.Drawing.Size(165, 20);
             this.lbluser.TabIndex = 1004;
-            this.lbluser.Text = "Pesquisar Fornecedor";
+            this.lbluser.Text = "Pesquisar Produtos";
             this.lbluser.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel2
@@ -358,9 +344,9 @@
             this.GridTotal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Nome,
-            this.Descrição,
             this.Telefone,
-            this.email});
+            this.email,
+            this.Descrição});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -381,6 +367,37 @@
             this.GridTotal.TabIndex = 7;
             this.GridTotal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellClick);
             this.GridTotal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.HeaderText = "email";
+            this.email.Name = "email";
+            // 
+            // Descrição
+            // 
+            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descrição.HeaderText = "Descricao";
+            this.Descrição.Name = "Descrição";
             // 
             // PnlPesquisa
             // 
@@ -404,9 +421,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(340, 24);
+            this.label3.Size = new System.Drawing.Size(313, 24);
             this.label3.TabIndex = 1005;
-            this.label3.Text = "Pesquisa por Nome do Fornecedor";
+            this.label3.Text = "Pesquisa por Nome do Produtos";
             // 
             // pictureBox6
             // 
@@ -458,38 +475,7 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Descrição
-            // 
-            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descrição.HeaderText = "Descricao";
-            this.Descrição.Name = "Descrição";
-            // 
-            // Telefone
-            // 
-            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.HeaderText = "email";
-            this.email.Name = "email";
-            // 
-            // FornecedorCRUD
+            // ProdutoCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -500,11 +486,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FornecedorCRUD";
+            this.Name = "ProdutoCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1";
+            this.Text = "ProdutoCRUD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.SizeChanged += new System.EventHandler(this.FornecedorCRUD_SizeChanged);
+            this.SizeChanged += new System.EventHandler(this.ProdutoCRUD_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -533,7 +519,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -568,8 +553,8 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
     }
 }
