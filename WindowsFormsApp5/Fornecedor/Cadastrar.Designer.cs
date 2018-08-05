@@ -179,7 +179,6 @@
             this.TxtDescricao.Location = new System.Drawing.Point(25, 157);
             this.TxtDescricao.MaxLength = 50;
             this.TxtDescricao.Name = "TxtDescricao";
-            this.TxtDescricao.PasswordChar = '•';
             this.TxtDescricao.Size = new System.Drawing.Size(649, 20);
             this.TxtDescricao.TabIndex = 3;
             this.TxtDescricao.Tag = "";
