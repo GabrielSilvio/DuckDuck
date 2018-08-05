@@ -33,7 +33,7 @@ namespace WindowsFormsApp5
         public void Retorna_Informações()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Forcenador", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -43,8 +43,8 @@ namespace WindowsFormsApp5
                 if (i.Read())
                 {
                     TxtNome.Text  = i["nome"].ToString();
-                    TxtTelefone.Text = i["login"].ToString();
-                    TxtDescricao.Text = i["senha"].ToString();
+                    TxtTelefone.Text = i["telefone"].ToString();
+                    TxtDescricao.Text = i["descricao"].ToString();
                     TxtEmail.Text = i["email"].ToString();
                 }
             }

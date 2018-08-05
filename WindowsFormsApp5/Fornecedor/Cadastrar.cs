@@ -28,11 +28,11 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
             {
-                Cria_Login_Fornecedor();
+                CriaFornecedor();
                 telacadastro.Atualiza_Lista();
             }
 
-        private void Cria_Login_Fornecedor()
+        private void CriaFornecedor()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Cria_Fornecedor", con);
