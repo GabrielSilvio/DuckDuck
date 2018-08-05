@@ -25,7 +25,7 @@ namespace WindowsFormsApp5
             lblMensagem.Visible = false;
 
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Fornecedor", con);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Fornecedor", con);
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -102,7 +102,7 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dados = GridTotal.Rows[e.RowIndex];
             codigo = (int)dados.Cells[0].Value;
-           
+            codigo = codigo;
         }
         void Edita_cadastro()
         {

@@ -33,7 +33,7 @@ namespace WindowsFormsApp5
         public void Retorna_Informações()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Forcenador", con);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Fornecedor", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -88,6 +88,7 @@ namespace WindowsFormsApp5
             finally
             {
                 con.Close();
+                this.Close();
             }
         }
     }
