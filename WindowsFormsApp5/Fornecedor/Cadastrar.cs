@@ -32,6 +32,12 @@ namespace WindowsFormsApp5
                 telacadastro.Atualiza_Lista();
             }
 
+        private void Limpar() {
+            TxtNome.Text = "";
+            TxtEmail.Text = "";
+            TxtTelefone.Text = "";
+            TxtDescricao.Text = "";
+        }
         private void CriaFornecedor()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
@@ -50,6 +56,7 @@ namespace WindowsFormsApp5
             {
                 int i = cmd.ExecuteNonQuery();
                 telacadastro.Atualiza_Lista();
+                Limpar();
             }
             catch (Exception ex)
             {
