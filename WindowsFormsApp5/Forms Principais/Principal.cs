@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace WindowsFormsApp5
 {
@@ -62,8 +54,36 @@ namespace WindowsFormsApp5
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            Form1 user = new Form1();
+            UsuarioCRUD user = new UsuarioCRUD();
             user.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FornecedorCRUD fornecedor = new FornecedorCRUD();
+            fornecedor.ShowDialog();
+        }
+
+        private void lblSair_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            string message = "Você realmente deseja sair?";
+            string caption = "Confirmação";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Mensagem se deseja realmente sair.
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

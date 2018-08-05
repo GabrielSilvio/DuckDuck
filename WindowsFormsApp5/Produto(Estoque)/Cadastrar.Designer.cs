@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp5
 {
-    partial class Cadastrar
+    partial class CadastrarProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -34,15 +34,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtLogin = new System.Windows.Forms.TextBox();
+            this.TxtTelefone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.TxtDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TxtSenhaConf = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Cargo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
@@ -52,7 +49,6 @@
             this.t_CargoTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_CargoTableAdapter();
             this.fKtlogintCargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tCargoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cbxCargo = new System.Windows.Forms.ComboBox();
             this.tCargoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tCargoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
@@ -94,11 +90,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(254, 9);
+            this.label5.Location = new System.Drawing.Point(186, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 25);
+            this.label5.Size = new System.Drawing.Size(293, 25);
             this.label5.TabIndex = 1001;
-            this.label5.Text = "Tela de Cadastro";
+            this.label5.Text = "Tela de Cadastro - Produtos";
             // 
             // TxtNome
             // 
@@ -125,16 +121,16 @@
             this.label1.TabIndex = 1004;
             this.label1.Text = "Nome";
             // 
-            // TxtLogin
+            // TxtTelefone
             // 
-            this.TxtLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtLogin.Location = new System.Drawing.Point(262, 79);
-            this.TxtLogin.MaxLength = 50;
-            this.TxtLogin.Name = "TxtLogin";
-            this.TxtLogin.Size = new System.Drawing.Size(182, 20);
-            this.TxtLogin.TabIndex = 1;
+            this.TxtTelefone.Location = new System.Drawing.Point(262, 79);
+            this.TxtTelefone.MaxLength = 50;
+            this.TxtTelefone.Name = "TxtTelefone";
+            this.TxtTelefone.Size = new System.Drawing.Size(182, 20);
+            this.TxtTelefone.TabIndex = 1;
             // 
             // label2
             // 
@@ -146,20 +142,20 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(267, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 1004;
-            this.label2.Text = "Login";
+            this.label2.Text = "Telefone";
             // 
-            // txtEmail
+            // TxtEmail
             // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(492, 79);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 20);
-            this.txtEmail.TabIndex = 2;
+            this.TxtEmail.Location = new System.Drawing.Point(492, 79);
+            this.TxtEmail.MaxLength = 50;
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(182, 20);
+            this.TxtEmail.TabIndex = 2;
             // 
             // label3
             // 
@@ -175,18 +171,17 @@
             this.label3.TabIndex = 1004;
             this.label3.Text = "Email";
             // 
-            // txtSenha
+            // TxtDescricao
             // 
-            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtDescricao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSenha.Location = new System.Drawing.Point(25, 157);
-            this.txtSenha.MaxLength = 50;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '•';
-            this.txtSenha.Size = new System.Drawing.Size(182, 20);
-            this.txtSenha.TabIndex = 3;
-            this.txtSenha.Tag = "";
+            this.TxtDescricao.Location = new System.Drawing.Point(25, 157);
+            this.TxtDescricao.MaxLength = 50;
+            this.TxtDescricao.Name = "TxtDescricao";
+            this.TxtDescricao.Size = new System.Drawing.Size(649, 20);
+            this.TxtDescricao.TabIndex = 3;
+            this.TxtDescricao.Tag = "";
             // 
             // label4
             // 
@@ -198,50 +193,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(30, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 21);
+            this.label4.Size = new System.Drawing.Size(87, 21);
             this.label4.TabIndex = 1004;
-            this.label4.Text = "Senha";
-            // 
-            // TxtSenhaConf
-            // 
-            this.TxtSenhaConf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtSenhaConf.Location = new System.Drawing.Point(262, 157);
-            this.TxtSenhaConf.MaxLength = 50;
-            this.TxtSenhaConf.Name = "TxtSenhaConf";
-            this.TxtSenhaConf.PasswordChar = '•';
-            this.TxtSenhaConf.Size = new System.Drawing.Size(182, 20);
-            this.TxtSenhaConf.TabIndex = 4;
-            this.TxtSenhaConf.Tag = "";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(267, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 21);
-            this.label6.TabIndex = 1004;
-            this.label6.Text = "Confirmação";
-            // 
-            // Cargo
-            // 
-            this.Cargo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cargo.AutoSize = true;
-            this.Cargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cargo.ForeColor = System.Drawing.Color.White;
-            this.Cargo.Location = new System.Drawing.Point(497, 131);
-            this.Cargo.Name = "Cargo";
-            this.Cargo.Size = new System.Drawing.Size(60, 21);
-            this.Cargo.TabIndex = 1006;
-            this.Cargo.Text = "Cargo";
+            this.label4.Text = "Descrição";
             // 
             // button1
             // 
@@ -306,17 +260,6 @@
             this.tCargoBindingSource1.DataMember = "t_Cargo";
             this.tCargoBindingSource1.DataSource = this.duck_DuckDataSet1;
             // 
-            // cbxCargo
-            // 
-            this.cbxCargo.DataSource = this.tCargoBindingSource3;
-            this.cbxCargo.DisplayMember = "nome";
-            this.cbxCargo.FormattingEnabled = true;
-            this.cbxCargo.Location = new System.Drawing.Point(492, 157);
-            this.cbxCargo.Name = "cbxCargo";
-            this.cbxCargo.Size = new System.Drawing.Size(189, 21);
-            this.cbxCargo.TabIndex = 5;
-            this.cbxCargo.ValueMember = "codigo";
-            // 
             // tCargoBindingSource3
             // 
             this.tCargoBindingSource3.DataMember = "t_Cargo";
@@ -350,7 +293,7 @@
             this.fKtlogintCargoBindingSource1.DataMember = "FK_t_login_t_Cargo";
             this.fKtlogintCargoBindingSource1.DataSource = this.tCargoBindingSource3;
             // 
-            // Cadastrar
+            // CadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -358,24 +301,20 @@
             this.ClientSize = new System.Drawing.Size(700, 260);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.cbxCargo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Cargo);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TxtSenhaConf);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.TxtLogin);
+            this.Controls.Add(this.TxtDescricao);
+            this.Controls.Add(this.TxtEmail);
+            this.Controls.Add(this.TxtTelefone);
             this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Cadastrar";
+            this.Name = "CadastrarProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "9";
             this.Load += new System.EventHandler(this.Cadastrar_Load);
@@ -400,15 +339,12 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox TxtLogin;
+        public System.Windows.Forms.TextBox TxtTelefone;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtSenha;
+        public System.Windows.Forms.TextBox TxtDescricao;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox TxtSenhaConf;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label Cargo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Duck_DuckDataSet1 duck_DuckDataSet1;
@@ -418,7 +354,6 @@
         private Duck_DuckDataSet1TableAdapters.t_CargoTableAdapter t_CargoTableAdapter;
         private System.Windows.Forms.BindingSource fKtlogintCargoBindingSource;
         private System.Windows.Forms.BindingSource tCargoBindingSource1;
-        private System.Windows.Forms.ComboBox cbxCargo;
         private System.Windows.Forms.BindingSource tCargoBindingSource2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

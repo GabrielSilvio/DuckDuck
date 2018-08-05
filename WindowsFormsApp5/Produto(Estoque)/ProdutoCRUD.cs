@@ -9,23 +9,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
-    public partial class Form1 : Form
+    public partial class ProdutoCRUD : Form
     {
-        public Form1()
+        public ProdutoCRUD()
         {
             InitializeComponent();
 
-            Conexao_user();
+            Conexao_Produto();
 
         }
 
 
-        public void Conexao_user()
+        public void Conexao_Produto()
         {
             lblMensagem.Visible = false;
 
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Retorna_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Produto", con);
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -35,7 +35,7 @@ namespace WindowsFormsApp5
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[4], i[5]);
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
 
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -60,7 +60,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cadastrar cadastrar = new Cadastrar(this);
+            CadastrarProduto cadastrar = new CadastrarProduto(this);
             cadastrar.ShowDialog();
 
         }
@@ -93,7 +93,7 @@ namespace WindowsFormsApp5
         public void Atualiza_Lista()
         {
             GridTotal.Rows.Clear();
-            Conexao_user();
+            Conexao_Produto();
         }
         public int codigo = -100;
         private void GridTotal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,19 +102,19 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dados = GridTotal.Rows[e.RowIndex];
             codigo = (int)dados.Cells[0].Value;
-           
+            codigo = codigo;
         }
         void Edita_cadastro()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Exclui_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Produto", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
             {
                 int i = cmd.ExecuteNonQuery();
-                MessageBox.Show("Cadastro excluido com sucesso");
+                MessageBox.Show("Cadastro  com sucesso");
                 Atualiza_Lista();
             }
             catch (Exception ex)
@@ -173,7 +173,7 @@ namespace WindowsFormsApp5
         void Excluir_cadastro()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Exclui_Login", con);
+            SqlCommand cmd = new SqlCommand("s_Exclui_Produto", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -196,22 +196,20 @@ namespace WindowsFormsApp5
         }
 
         private void button3_Click_1(object sender, EventArgs e)
-        {   
-            //função de excluir cadastro
+        {
             Excluir_cadastro();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //seta o foco para random
             if (codigo != -100)
             { 
-                Form2 form2 = new Form2(this, codigo);
+                EditarProduto form2 = new EditarProduto(this, codigo);
                 form2.ShowDialog();
             }
         }
 
-        private void Form1_SizeChanged(object sender, EventArgs e)
+        private void ProdutoCRUD_SizeChanged(object sender, EventArgs e)
         {
             GridTotal.Columns[0].Width = this.Size.Width / 2;
         }
@@ -219,10 +217,12 @@ namespace WindowsFormsApp5
         private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             ExportToExcel();
         }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 

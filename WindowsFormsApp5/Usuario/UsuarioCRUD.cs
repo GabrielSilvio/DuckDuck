@@ -9,14 +9,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
-    public partial class Form1 : Form
+    public partial class UsuarioCRUD : Form
     {
-        public Form1()
+        public UsuarioCRUD()
         {
             InitializeComponent();
-
             Conexao_user();
-
         }
 
 
@@ -47,7 +45,7 @@ namespace WindowsFormsApp5
                 }
                 lblContador.Text = contador.ToString() + " Registros";
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                lblMensagem.Visible = true;
                lblMensagem.Text=("DADOS NÃO ENCONTRADOS POR FAVOR VERIFIQUE O NOME DIGITADO");
@@ -60,7 +58,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cadastrar cadastrar = new Cadastrar(this);
+            CadastrarUsuario cadastrar = new CadastrarUsuario(this);
             cadastrar.ShowDialog();
 
         }
@@ -196,17 +194,15 @@ namespace WindowsFormsApp5
         }
 
         private void button3_Click_1(object sender, EventArgs e)
-        {   
-            //função de excluir cadastro
+        {
             Excluir_cadastro();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //seta o foco para random
             if (codigo != -100)
             { 
-                Form2 form2 = new Form2(this, codigo);
+                EditarUsuario form2 = new EditarUsuario(this, codigo);
                 form2.ShowDialog();
             }
         }
@@ -219,10 +215,12 @@ namespace WindowsFormsApp5
         private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             ExportToExcel();
         }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
