@@ -175,11 +175,13 @@
             this.TxtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtTelefone.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TxtTelefone.Location = new System.Drawing.Point(262, 80);
-            this.TxtTelefone.MaxLength = 50;
+            this.TxtTelefone.MaxLength = 11;
             this.TxtTelefone.Name = "TxtTelefone";
             this.TxtTelefone.Size = new System.Drawing.Size(181, 20);
             this.TxtTelefone.TabIndex = 1008;
+            this.TxtTelefone.Text = "21985827623";
             // 
             // TxtNome
             // 

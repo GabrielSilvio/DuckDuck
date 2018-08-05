@@ -20,7 +20,7 @@ namespace WindowsFormsApp5
             this.codigo = codigo;
             Retorna_Informações();
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -19,6 +19,14 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
+            TxtTelefone.GotFocus += TxtTelefone_GotFocus;
+            TxtTelefone.LostFocus += TxtTelefone_LostFocus;
+        }
+        public bool Focused = false; 
+
+        private void TxtTelefone_LostFocus(object sender, EventArgs e)
+        {
+       
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,5 +84,13 @@ namespace WindowsFormsApp5
             this.t_loginTableAdapter.Fill(this.duck_DuckDataSet1.t_login);
 
         }
+    private void TxtTelefone_GotFocus(object sender, EventArgs e)
+    {
+            if (Focused==false)
+            {
+                TxtTelefone.Text = "";
+            }
+            Focused = true;  
     }
+}
 }
