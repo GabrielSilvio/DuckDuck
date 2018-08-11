@@ -29,6 +29,7 @@ namespace WindowsFormsApp5
         private void button1_Click(object sender, EventArgs e)
         {
             Edita_Produto();
+            this.Close();
         }
         public void Retorna_Informações()
         {
@@ -42,10 +43,12 @@ namespace WindowsFormsApp5
                 SqlDataReader i = cmd.ExecuteReader();
                 if (i.Read())
                 {
-                    TxtNome.Text  = i["nome"].ToString();
-                    TxtTelefone.Text = i["telefone"].ToString();
-                    TxtDescricao.Text = i["descricao"].ToString();
-                    TxtEmail.Text = i["email"].ToString();
+                    TxtNome.Text            = i["nome"           ].ToString();
+                    TxtDetalhes.Text        = i["detalhes"       ].ToString();
+                    TxtPreco.Text           = i["preco"          ].ToString();
+                    TxtPrecoFornecedor.Text = i["precoFornecedor"].ToString();
+                    TxtQuantidade.Text      = i["quantidade"     ].ToString();
+                    TxtFornecedor.Text      = i["fornecedor"     ].ToString();
                 }
             }
             catch (Exception ex)
@@ -60,6 +63,9 @@ namespace WindowsFormsApp5
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            
+            // TODO: esta linha de código carrega dados na tabela 'duck_DuckDataSet1.t_Fornecedor'. Você pode movê-la ou removê-la conforme necessário.
+            this.t_FornecedorTableAdapter.Fill(this.duck_DuckDataSet1.t_Fornecedor);
             // TODO: esta linha de código carrega dados na tabela 'duck_DuckDataSet1.t_Cargo'. Você pode movê-la ou removê-la conforme necessário.
             this.t_CargoTableAdapter.Fill(this.duck_DuckDataSet1.t_Cargo);
 
@@ -68,11 +74,14 @@ namespace WindowsFormsApp5
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand    cmd = new SqlCommand("s_Edita_Dados_Produto", con);
-            cmd.Parameters.AddWithValue("@codigo", codigo);
-            cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
-            cmd.Parameters.AddWithValue("@telefone" , TxtTelefone.Text);
-            cmd.Parameters.AddWithValue("@email"  , TxtEmail.Text);
-            cmd.Parameters.AddWithValue("@descricao" , TxtDescricao.Text);
+            cmd.Parameters.AddWithValue("@codigo"			 , codigo);
+            cmd.Parameters.AddWithValue("@nome"			     , TxtNome.Text);
+            cmd.Parameters.AddWithValue("@detalhes"		     , TxtDetalhes.Text);
+            cmd.Parameters.AddWithValue("@quantidade"		 , TxtPreco.Text);
+            cmd.Parameters.AddWithValue("@preco"			 , TxtPrecoFornecedor.Text);
+            cmd.Parameters.AddWithValue("@precoFonecedor"    , TxtQuantidade.Text);
+            cmd.Parameters.AddWithValue("@cFornecedor"       , TxtFornecedor.Text);
+
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try

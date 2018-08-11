@@ -183,6 +183,16 @@ namespace WindowsFormsApp5.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Seta_carrinho {
+            get {
+                object obj = ResourceManager.GetObject("Seta carrinho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SETA_PRA_BAIXO {
             get {
                 object obj = ResourceManager.GetObject("SETA PRA BAIXO", resourceCulture);

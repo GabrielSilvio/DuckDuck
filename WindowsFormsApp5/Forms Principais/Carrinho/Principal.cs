@@ -85,5 +85,21 @@ namespace WindowsFormsApp5
                 Application.Exit();
             }
         }
+
+        private void BtnEstoque_Click_1(object sender, EventArgs e)
+        {
+            ProdutoCRUD produto = new ProdutoCRUD();
+            produto.ShowDialog();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

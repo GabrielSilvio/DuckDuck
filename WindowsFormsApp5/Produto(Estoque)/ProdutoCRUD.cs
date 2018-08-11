@@ -27,6 +27,7 @@ namespace WindowsFormsApp5
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Retorna_Produto", con);
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
+            cmd.Parameters.AddWithValue("@fornecedor", lblPesqFornecedor.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
@@ -35,8 +36,8 @@ namespace WindowsFormsApp5
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
-
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5], i[6]);
+         
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                     this.GridTotal.EnableHeadersVisualStyles = false;
@@ -102,12 +103,12 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dados = GridTotal.Rows[e.RowIndex];
             codigo = (int)dados.Cells[0].Value;
-            codigo = codigo;
+             //codigo = codigo;
         }
         void Edita_cadastro()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Produto", con);
+            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Produtos", con);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -207,6 +208,7 @@ namespace WindowsFormsApp5
                 EditarProduto form2 = new EditarProduto(this, codigo);
                 form2.ShowDialog();
             }
+            this.Close();
         }
 
         private void ProdutoCRUD_SizeChanged(object sender, EventArgs e)

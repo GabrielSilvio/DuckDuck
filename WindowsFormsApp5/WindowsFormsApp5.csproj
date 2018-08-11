@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -119,10 +120,10 @@
     <Compile Include="Forms Principais\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Principais\Principal.cs">
+    <Compile Include="Forms Principais\Carrinho\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Principais\Principal.Designer.cs">
+    <Compile Include="Forms Principais\Carrinho\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -157,7 +158,7 @@
     <EmbeddedResource Include="Forms Principais\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Principais\Principal.resx">
+    <EmbeddedResource Include="Forms Principais\Carrinho\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -266,5 +267,8 @@
     <None Include="Resources\excel.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Seta carrinho.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

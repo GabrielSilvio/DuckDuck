@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoCRUD));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,10 +63,14 @@
             this.GridTotal = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlPesquisa = new System.Windows.Forms.Panel();
+            this.lblFornecedor = new System.Windows.Forms.Label();
+            this.lblPesqFornecedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lblPesq = new System.Windows.Forms.TextBox();
@@ -113,9 +119,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(365, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 25);
+            this.label4.Size = new System.Drawing.Size(297, 25);
             this.label4.TabIndex = 1004;
-            this.label4.Text = "Gerenciamento de Produtos";
+            this.label4.Text = "Gerenciamento de Estoque";
             // 
             // label1
             // 
@@ -344,17 +350,19 @@
             this.GridTotal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Nome,
-            this.Telefone,
-            this.email,
-            this.Descrição});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridTotal.DefaultCellStyle = dataGridViewCellStyle3;
+            this.descrição,
+            this.quantidade,
+            this.preco,
+            this.precoFornecedor,
+            this.Fornecedor});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridTotal.DefaultCellStyle = dataGridViewCellStyle5;
             this.GridTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridTotal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridTotal.Location = new System.Drawing.Point(0, 73);
@@ -381,28 +389,50 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             // 
-            // Telefone
+            // descrição
             // 
-            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
+            this.descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descrição.HeaderText = "Descrição";
+            this.descrição.Name = "descrição";
             // 
-            // email
+            // quantidade
             // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.HeaderText = "email";
-            this.email.Name = "email";
+            this.quantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
             // 
-            // Descrição
+            // preco
             // 
-            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descrição.HeaderText = "Descricao";
-            this.Descrição.Name = "Descrição";
+            this.preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = "NULL";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle3;
+            this.preco.HeaderText = "Preço";
+            this.preco.Name = "preco";
+            // 
+            // precoFornecedor
+            // 
+            this.precoFornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.precoFornecedor.DefaultCellStyle = dataGridViewCellStyle4;
+            this.precoFornecedor.HeaderText = "Preço Fornecedor";
+            this.precoFornecedor.Name = "precoFornecedor";
+            // 
+            // Fornecedor
+            // 
+            this.Fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fornecedor.HeaderText = "Fornecedor";
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Fornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // PnlPesquisa
             // 
             this.PnlPesquisa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.PnlPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlPesquisa.Controls.Add(this.lblFornecedor);
+            this.PnlPesquisa.Controls.Add(this.lblPesqFornecedor);
             this.PnlPesquisa.Controls.Add(this.label3);
             this.PnlPesquisa.Controls.Add(this.pictureBox6);
             this.PnlPesquisa.Controls.Add(this.lblPesq);
@@ -413,6 +443,26 @@
             this.PnlPesquisa.TabIndex = 9;
             this.PnlPesquisa.Visible = false;
             // 
+            // lblFornecedor
+            // 
+            this.lblFornecedor.AutoSize = true;
+            this.lblFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.lblFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFornecedor.ForeColor = System.Drawing.Color.White;
+            this.lblFornecedor.Location = new System.Drawing.Point(351, 5);
+            this.lblFornecedor.Name = "lblFornecedor";
+            this.lblFornecedor.Size = new System.Drawing.Size(120, 24);
+            this.lblFornecedor.TabIndex = 1007;
+            this.lblFornecedor.Text = "Fornecedor";
+            // 
+            // lblPesqFornecedor
+            // 
+            this.lblPesqFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPesqFornecedor.Location = new System.Drawing.Point(423, 9);
+            this.lblPesqFornecedor.Name = "lblPesqFornecedor";
+            this.lblPesqFornecedor.Size = new System.Drawing.Size(268, 20);
+            this.lblPesqFornecedor.TabIndex = 1006;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -421,9 +471,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 24);
+            this.label3.Size = new System.Drawing.Size(66, 24);
             this.label3.TabIndex = 1005;
-            this.label3.Text = "Pesquisa por Nome do Produtos";
+            this.label3.Text = "Nome";
             // 
             // pictureBox6
             // 
@@ -443,7 +493,7 @@
             // lblPesq
             // 
             this.lblPesq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPesq.Location = new System.Drawing.Point(349, 12);
+            this.lblPesq.Location = new System.Drawing.Point(75, 10);
             this.lblPesq.Name = "lblPesq";
             this.lblPesq.Size = new System.Drawing.Size(268, 20);
             this.lblPesq.TabIndex = 1003;
@@ -551,10 +601,14 @@
         private System.Windows.Forms.Label lblMensagem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label lblFornecedor;
+        private System.Windows.Forms.TextBox lblPesqFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoFornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
     }
 }
