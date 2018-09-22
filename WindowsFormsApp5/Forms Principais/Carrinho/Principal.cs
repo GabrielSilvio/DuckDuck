@@ -162,7 +162,8 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FiltroVendas filtro = new FiltroVendas();
+            filtro.ShowDialog();
         }
 
         private void lblPesq_TextChanged(object sender, EventArgs e)

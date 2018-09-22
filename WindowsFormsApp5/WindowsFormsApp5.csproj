@@ -88,6 +88,12 @@
     <Compile Include="Fornecedor\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historico\FiltroVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historico\FiltroVendas.Designer.cs">
+      <DependentUpon>FiltroVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto%28Estoque%29\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historico\FiltroVendas.resx">
+      <DependentUpon>FiltroVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
@@ -293,5 +302,6 @@
   <ItemGroup>
     <None Include="Resources\Seta carrinho.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
