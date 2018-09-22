@@ -2,7 +2,7 @@
 {
 
 
-    partial class Duck_DuckDataSet
+    partial class Duck_DuckDataSet1
     {
         partial class t_ProdutoDataTable
         {

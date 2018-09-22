@@ -268,5 +268,15 @@ namespace WindowsFormsApp5
             DataGridViewRow dadosProduto = GridProduto.Rows[e.RowIndex];
             codigoProduto = (int)dadosProduto.Cells[0].Value;
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,7 +10,6 @@
     <Shape ID="DesignTable:t_login" ZOrder="16" X="329" Y="70" Height="191" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:s_Retorna_Cadastros" ZOrder="15" X="583" Y="70" Height="191" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:s_Verifica_Login" ZOrder="14" X="916" Y="70" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="12" X="1223" Y="70" Height="200" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
     <Shape ID="DesignTable:t_Fornecedor" ZOrder="11" X="1593" Y="70" Height="172" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:t_Login" ZOrder="10" X="1883" Y="70" Height="191" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:t_Produto" ZOrder="9" X="2140" Y="70" Height="229" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
@@ -20,6 +19,7 @@
     <Shape ID="DesignTable:s_Retorna_Fornecedor" ZOrder="5" X="3502" Y="70" Height="172" Width="272" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:s_Retorna_Login" ZOrder="4" X="3844" Y="70" Height="191" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:s_Retorna_Produto" ZOrder="3" X="4153" Y="70" Height="229" Width="254" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="12" X="1223" Y="70" Height="200" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_t_login_t_Cargo" ZOrder="13" LineWidth="11">
