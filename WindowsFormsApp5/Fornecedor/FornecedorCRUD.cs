@@ -48,7 +48,7 @@ namespace WindowsFormsApp5
                 lblContador.Text = contador.ToString() + " Registros";
                 NenhumDados = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                lblContador.Text = "0 Registros";
                codigo = -100;
@@ -106,7 +106,7 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dados = GridTotal.Rows[e.RowIndex];
             codigo = (int)dados.Cells[0].Value;
-            codigo = codigo;
+            // codigo = codigo;
         }
         void Edita_cadastro()
         {

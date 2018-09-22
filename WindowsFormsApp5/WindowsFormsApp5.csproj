@@ -55,6 +55,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Duck_DuckDataSet1.cs">
+      <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Editar Quantiade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Editar Quantiade.Designer.cs">
+      <DependentUpon>Editar Quantiade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Quantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Quantidade.Designer.cs">
+      <DependentUpon>Quantidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornecedor\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +143,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms Principais\Carrinho\Editar Quantiade.resx">
+      <DependentUpon>Editar Quantiade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Principais\Carrinho\Quantidade.resx">
+      <DependentUpon>Quantidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,7 +287,9 @@
   <ItemGroup>
     <None Include="Resources\excel.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Seta carrinho.png" />
   </ItemGroup>

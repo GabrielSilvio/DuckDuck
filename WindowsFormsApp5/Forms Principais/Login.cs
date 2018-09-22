@@ -61,7 +61,6 @@ namespace WindowsFormsApp5
             cmd.CommandType = CommandType.StoredProcedure;
             login = TxtLogin.Text;
             con.Open();
-
             try
             {
                 Properties.Settings.Default.login = TxtLogin.Text;

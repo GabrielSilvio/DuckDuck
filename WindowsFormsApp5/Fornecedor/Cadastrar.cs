@@ -22,7 +22,7 @@ namespace WindowsFormsApp5
             TxtTelefone.GotFocus += TxtTelefone_GotFocus;
             TxtTelefone.LostFocus += TxtTelefone_LostFocus;
         }
-        public bool Focused = false; 
+        public bool FocusedT = false; 
 
         private void TxtTelefone_LostFocus(object sender, EventArgs e)
         {
@@ -86,11 +86,11 @@ namespace WindowsFormsApp5
         }
     private void TxtTelefone_GotFocus(object sender, EventArgs e)
     {
-            if (Focused==false)
+            if (FocusedT==false)
             {
                 TxtTelefone.Text = "";
             }
-            Focused = true;  
+            FocusedT = true;  
     }
 }
 }

@@ -48,7 +48,7 @@ namespace WindowsFormsApp5
                 }
                 lblContador.Text = contador.ToString() + " Registros";
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                lblMensagem.Visible = true;
                lblMensagem.Text=("DADOS NÃO ENCONTRADOS POR FAVOR VERIFIQUE O NOME DIGITADO");
