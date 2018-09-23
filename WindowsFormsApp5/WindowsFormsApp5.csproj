@@ -94,6 +94,12 @@
     <Compile Include="Historico\FiltroVendas.Designer.cs">
       <DependentUpon>FiltroVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historico\HistoricoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historico\HistoricoVenda.Designer.cs">
+      <DependentUpon>HistoricoVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto%28Estoque%29\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Historico\FiltroVendas.resx">
       <DependentUpon>FiltroVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historico\HistoricoVenda.resx">
+      <DependentUpon>HistoricoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>

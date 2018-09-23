@@ -63,6 +63,8 @@ namespace WindowsFormsApp5
         private void BtnConfirmar_Click_1(object sender, EventArgs e)
         {
             VerificarDados();
+            HistoricoVenda historico = new HistoricoVenda(InicioDia,FinalDia, (int)CboVen.SelectedValue,(int)CboPro.SelectedValue);
+            historico.ShowDialog();
         }
         private void ChkDiario_CheckedChanged(object sender, EventArgs e)
         {

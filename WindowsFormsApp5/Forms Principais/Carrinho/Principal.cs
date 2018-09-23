@@ -21,8 +21,6 @@ namespace WindowsFormsApp5
             Retorna_Produto();
             Retorna_Carrinho();
         }
-        
-
         private void LblUser_MouseMove(object sender, MouseEventArgs e)
         {
             LblUser.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3E7884");
@@ -271,11 +269,6 @@ namespace WindowsFormsApp5
         }
 
         private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmPri_Load(object sender, EventArgs e)
         {
 
         }

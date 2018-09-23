@@ -38,20 +38,6 @@ namespace WindowsFormsApp5
             carrega_login();
             
         }
-
-        private void lblPrincipal_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void carrega_login()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);

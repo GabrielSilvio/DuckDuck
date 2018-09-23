@@ -132,7 +132,6 @@
             this.lblPrincipal.Size = new System.Drawing.Size(330, 25);
             this.lblPrincipal.TabIndex = 4;
             this.lblPrincipal.Text = "Por Favor Faça o Login Primeiro";
-            this.lblPrincipal.Click += new System.EventHandler(this.lblPrincipal_Click);
             // 
             // TxtLogin
             // 

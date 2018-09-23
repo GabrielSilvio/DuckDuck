@@ -48,11 +48,12 @@
             this.DateDiarioInicial = new System.Windows.Forms.DateTimePicker();
             this.DateDiarioFinal = new System.Windows.Forms.DateTimePicker();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CboPro = new System.Windows.Forms.ComboBox();
             this.tProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duckDuckDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CboVen = new System.Windows.Forms.ComboBox();
+            this.tloginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.t_LoginTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_LoginTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tloginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.t_loginTableAdapter1 = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_loginTableAdapter();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -71,8 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duckDuckDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tLoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tloginBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tLoginBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -130,7 +130,7 @@
             this.BtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfirmar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfirmar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnConfirmar.Location = new System.Drawing.Point(776, 309);
+            this.BtnConfirmar.Location = new System.Drawing.Point(776, 312);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(175, 31);
             this.BtnConfirmar.TabIndex = 1051;
@@ -145,7 +145,7 @@
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnCancelar.Location = new System.Drawing.Point(544, 309);
+            this.BtnCancelar.Location = new System.Drawing.Point(544, 312);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(175, 31);
             this.BtnCancelar.TabIndex = 1050;
@@ -309,16 +309,16 @@
             this.panel6.Size = new System.Drawing.Size(4, 413);
             this.panel6.TabIndex = 1002;
             // 
-            // comboBox1
+            // CboPro
             // 
-            this.comboBox1.DataSource = this.tProdutoBindingSource;
-            this.comboBox1.DisplayMember = "nome";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(552, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 1052;
-            this.comboBox1.ValueMember = "nome";
+            this.CboPro.DataSource = this.tProdutoBindingSource;
+            this.CboPro.DisplayMember = "nome";
+            this.CboPro.FormattingEnabled = true;
+            this.CboPro.Location = new System.Drawing.Point(552, 108);
+            this.CboPro.Name = "CboPro";
+            this.CboPro.Size = new System.Drawing.Size(200, 21);
+            this.CboPro.TabIndex = 1052;
+            this.CboPro.ValueMember = "codigo";
             // 
             // tProdutoBindingSource
             // 
@@ -335,16 +335,21 @@
             this.duck_DuckDataSet1.DataSetName = "Duck_DuckDataSet1";
             this.duck_DuckDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // comboBox2
+            // CboVen
             // 
-            this.comboBox2.DataSource = this.tloginBindingSource1;
-            this.comboBox2.DisplayMember = "nome";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(552, 213);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 1052;
-            this.comboBox2.ValueMember = "nome";
+            this.CboVen.DataSource = this.tloginBindingSource1;
+            this.CboVen.DisplayMember = "login";
+            this.CboVen.FormattingEnabled = true;
+            this.CboVen.Location = new System.Drawing.Point(552, 213);
+            this.CboVen.Name = "CboVen";
+            this.CboVen.Size = new System.Drawing.Size(200, 21);
+            this.CboVen.TabIndex = 1052;
+            this.CboVen.ValueMember = "codigo";
+            // 
+            // tloginBindingSource1
+            // 
+            this.tloginBindingSource1.DataMember = "t_login";
+            this.tloginBindingSource1.DataSource = this.duckDuckDataSet1BindingSource;
             // 
             // tLoginBindingSource
             // 
@@ -403,11 +408,6 @@
             this.label4.TabIndex = 1055;
             this.label4.Text = "Filtro Venda";
             // 
-            // tloginBindingSource1
-            // 
-            this.tloginBindingSource1.DataMember = "t_login";
-            this.tloginBindingSource1.DataSource = this.duckDuckDataSet1BindingSource;
-            // 
             // t_loginTableAdapter1
             // 
             this.t_loginTableAdapter1.ClearBeforeFill = true;
@@ -422,8 +422,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CboVen);
+            this.Controls.Add(this.CboPro);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.BtnCancelar);
@@ -452,8 +452,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tProdutoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duckDuckDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tLoginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tloginBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tLoginBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,10 +479,10 @@
         private System.Windows.Forms.DateTimePicker DateDiarioInicial;
         private System.Windows.Forms.DateTimePicker DateDiarioFinal;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CboPro;
         private System.Windows.Forms.BindingSource duckDuckDataSet1BindingSource;
         private Duck_DuckDataSet1 duck_DuckDataSet1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CboVen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource tProdutoBindingSource;
