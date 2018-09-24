@@ -19,10 +19,12 @@ namespace WindowsFormsApp5
         public HistoricoVenda(DateTime inicioDia, DateTime finalDia, int usuario,int produto)
         {
             InitializeComponent();
+            Retorna_HistoricoVenda();
             this.InicioDia = inicioDia;
             this.FinalDia = finalDia;
             this.Usuario = usuario;
             this.Produto = produto;
+
         }
         private void BtnFil_Click(object sender, EventArgs e)
         {

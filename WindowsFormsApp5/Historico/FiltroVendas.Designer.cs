@@ -36,15 +36,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnConfirmar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.PnlAnu = new System.Windows.Forms.Panel();
             this.NudAnual = new System.Windows.Forms.NumericUpDown();
             this.ChkAnual = new System.Windows.Forms.CheckBox();
             this.ChkMensal = new System.Windows.Forms.CheckBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.PnlMen = new System.Windows.Forms.Panel();
             this.NudMensal = new System.Windows.Forms.NumericUpDown();
             this.CboMen = new System.Windows.Forms.ComboBox();
             this.ChkDiario = new System.Windows.Forms.CheckBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.PnlDia = new System.Windows.Forms.Panel();
             this.DateDiarioInicial = new System.Windows.Forms.DateTimePicker();
             this.DateDiarioFinal = new System.Windows.Forms.DateTimePicker();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -63,11 +63,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.t_loginTableAdapter1 = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_loginTableAdapter();
             this.panel4.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.PnlAnu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudAnual)).BeginInit();
-            this.panel7.SuspendLayout();
+            this.PnlMen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudMensal)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.PnlDia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duckDuckDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).BeginInit();
@@ -153,14 +153,13 @@
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // panel8
+            // PnlAnu
             // 
-            this.panel8.Controls.Add(this.NudAnual);
-            this.panel8.Controls.Add(this.ChkAnual);
-            this.panel8.Location = new System.Drawing.Point(40, 294);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(463, 66);
-            this.panel8.TabIndex = 1049;
+            this.PnlAnu.Controls.Add(this.NudAnual);
+            this.PnlAnu.Location = new System.Drawing.Point(40, 294);
+            this.PnlAnu.Name = "PnlAnu";
+            this.PnlAnu.Size = new System.Drawing.Size(463, 66);
+            this.PnlAnu.TabIndex = 1049;
             // 
             // NudAnual
             // 
@@ -188,7 +187,7 @@
             // 
             this.ChkAnual.AutoSize = true;
             this.ChkAnual.ForeColor = System.Drawing.Color.White;
-            this.ChkAnual.Location = new System.Drawing.Point(11, 3);
+            this.ChkAnual.Location = new System.Drawing.Point(54, 299);
             this.ChkAnual.Name = "ChkAnual";
             this.ChkAnual.Size = new System.Drawing.Size(53, 17);
             this.ChkAnual.TabIndex = 1043;
@@ -200,7 +199,7 @@
             // 
             this.ChkMensal.AutoSize = true;
             this.ChkMensal.ForeColor = System.Drawing.Color.White;
-            this.ChkMensal.Location = new System.Drawing.Point(54, 195);
+            this.ChkMensal.Location = new System.Drawing.Point(54, 189);
             this.ChkMensal.Name = "ChkMensal";
             this.ChkMensal.Size = new System.Drawing.Size(60, 17);
             this.ChkMensal.TabIndex = 1048;
@@ -208,14 +207,14 @@
             this.ChkMensal.UseVisualStyleBackColor = true;
             this.ChkMensal.Click += new System.EventHandler(this.ChkMensal_CheckedChanged);
             // 
-            // panel7
+            // PnlMen
             // 
-            this.panel7.Controls.Add(this.NudMensal);
-            this.panel7.Controls.Add(this.CboMen);
-            this.panel7.Location = new System.Drawing.Point(43, 187);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(460, 66);
-            this.panel7.TabIndex = 1047;
+            this.PnlMen.Controls.Add(this.NudMensal);
+            this.PnlMen.Controls.Add(this.CboMen);
+            this.PnlMen.Location = new System.Drawing.Point(43, 187);
+            this.PnlMen.Name = "PnlMen";
+            this.PnlMen.Size = new System.Drawing.Size(460, 66);
+            this.PnlMen.TabIndex = 1047;
             // 
             // NudMensal
             // 
@@ -264,7 +263,7 @@
             // 
             this.ChkDiario.AutoSize = true;
             this.ChkDiario.ForeColor = System.Drawing.Color.White;
-            this.ChkDiario.Location = new System.Drawing.Point(54, 89);
+            this.ChkDiario.Location = new System.Drawing.Point(61, 82);
             this.ChkDiario.Name = "ChkDiario";
             this.ChkDiario.Size = new System.Drawing.Size(53, 17);
             this.ChkDiario.TabIndex = 1046;
@@ -272,20 +271,21 @@
             this.ChkDiario.UseVisualStyleBackColor = true;
             this.ChkDiario.Click += new System.EventHandler(this.ChkDiario_CheckedChanged);
             // 
-            // panel5
+            // PnlDia
             // 
-            this.panel5.Controls.Add(this.DateDiarioInicial);
-            this.panel5.Controls.Add(this.DateDiarioFinal);
-            this.panel5.Location = new System.Drawing.Point(43, 80);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(460, 66);
-            this.panel5.TabIndex = 1045;
+            this.PnlDia.Controls.Add(this.DateDiarioInicial);
+            this.PnlDia.Controls.Add(this.DateDiarioFinal);
+            this.PnlDia.Location = new System.Drawing.Point(43, 80);
+            this.PnlDia.Name = "PnlDia";
+            this.PnlDia.Size = new System.Drawing.Size(460, 66);
+            this.PnlDia.TabIndex = 1045;
             // 
             // DateDiarioInicial
             // 
             this.DateDiarioInicial.CustomFormat = "dd/MM/yyyy";
             this.DateDiarioInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateDiarioInicial.Location = new System.Drawing.Point(11, 26);
+            this.DateDiarioInicial.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DateDiarioInicial.Name = "DateDiarioInicial";
             this.DateDiarioInicial.Size = new System.Drawing.Size(200, 20);
             this.DateDiarioInicial.TabIndex = 1037;
@@ -296,6 +296,7 @@
             this.DateDiarioFinal.CustomFormat = "dd/MM/yyyy";
             this.DateDiarioFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateDiarioFinal.Location = new System.Drawing.Point(250, 26);
+            this.DateDiarioFinal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DateDiarioFinal.Name = "DateDiarioFinal";
             this.DateDiarioFinal.Size = new System.Drawing.Size(200, 20);
             this.DateDiarioFinal.TabIndex = 1036;
@@ -419,6 +420,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.ClientSize = new System.Drawing.Size(1034, 391);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.ChkAnual);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -427,15 +429,15 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.PnlAnu);
             this.Controls.Add(this.ChkMensal);
             this.Controls.Add(this.ChkDiario);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.PnlDia);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.PnlMen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FiltroVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -443,12 +445,11 @@
             this.Load += new System.EventHandler(this.FiltroVendas_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.PnlAnu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NudAnual)).EndInit();
-            this.panel7.ResumeLayout(false);
+            this.PnlMen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NudMensal)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.PnlDia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tProdutoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duckDuckDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).EndInit();
@@ -467,12 +468,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button BtnConfirmar;
         private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel PnlAnu;
         private System.Windows.Forms.CheckBox ChkAnual;
         private System.Windows.Forms.CheckBox ChkMensal;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel PnlMen;
         private System.Windows.Forms.CheckBox ChkDiario;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel PnlDia;
         private System.Windows.Forms.ComboBox CboMen;
         private System.Windows.Forms.NumericUpDown NudAnual;
         private System.Windows.Forms.NumericUpDown NudMensal;
