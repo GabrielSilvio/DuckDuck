@@ -14,23 +14,14 @@ namespace WindowsFormsApp5
     public partial class CadastrarProduto : Form
     {
         ProdutoCRUD telacadastro;
+        public int PreçoTotal, PorcentagemImposto, PorcentagemLucro,PreçoFornecedor,PreçoProduto;
+        public int imposto;
+        public int lucro    ;
 
         public CadastrarProduto(ProdutoCRUD telacadastro)
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CriaProduto();
-            telacadastro.Atualiza_Lista();
-            Limpatela();
         }
 
         private void CriaProduto()
@@ -42,9 +33,14 @@ namespace WindowsFormsApp5
             cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
             cmd.Parameters.AddWithValue("@detalhes", TxtDetalhes.Text);
             cmd.Parameters.AddWithValue("@quantidade", TxtQuantidade.Text);
-            cmd.Parameters.AddWithValue("@preco", TxtPreco.Text);
+            cmd.Parameters.AddWithValue("@preco", TxtPorcentagemImposto.Text);
             cmd.Parameters.AddWithValue("@precoFonecedor", TxtPrecoFornecedor.Text);
             cmd.Parameters.AddWithValue("@cFornecedor", (int)CbxForncedor.SelectedValue);
+            cmd.Parameters.AddWithValue("@validade", DtmValidade.Text);
+            cmd.Parameters.AddWithValue("@fabricacao", DtmFabricacao.Text);
+            cmd.Parameters.AddWithValue("@imposto", TxtPorcentagemImposto.Text);
+            cmd.Parameters.AddWithValue("@lucro", TxtPorcentagemLucro.Text);
+            cmd.Parameters.AddWithValue("@precoTotal", TxtPrecoTotal.Text);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
@@ -66,11 +62,10 @@ namespace WindowsFormsApp5
         {
             TxtDetalhes.Clear();
             TxtNome.Clear();
-            TxtPreco.Clear();
+            TxtPorcentagemImposto.Clear();
             TxtPrecoFornecedor.Clear();
             TxtQuantidade.Clear();
         }
-
         private void Cadastrar_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'duck_DuckDataSet11.t_Fornecedor'. Você pode movê-la ou removê-la conforme necessário.
@@ -82,14 +77,54 @@ namespace WindowsFormsApp5
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
+            if (ChkValidade.Checked)
+            {
+                PnlValidade.Visible = false;
+            }
+            else
+                PnlValidade.Visible = true;
+        }
+        public void CalcularPreçoTotal(){
+            PreçoFornecedor = (int.Parse(TxtPrecoFornecedor.Text));
+            PorcentagemImposto = (int.Parse(TxtPorcentagemImposto.Text));
+            PorcentagemLucro = (int.Parse(TxtPorcentagemLucro.Text));
+
+            PreçoProduto = (PreçoFornecedor + (PreçoFornecedor * PorcentagemImposto));
+            PreçoTotal = ((PreçoProduto * PorcentagemLucro) / 100);
+            PreçoTotal = (int.Parse(TxtPrecoTotal.Text));
+        }
+
+        private void TxtPorcentagemImposto_TextChanged(object sender, EventArgs e)
+        {
+            //TxtPorcentagemImposto.Text + "%";
+        }
+
+        private void TxtPorcentagemLucro_TextChanged(object sender, EventArgs e)
+        {
+            //TxtPorcentagemLucro.Text = TxtPorcentagemLucro.Text + "%";
 
         }
 
-        private void TxtDescricao_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            CriaProduto();
+            CalcularPreçoTotal();
+            telacadastro.Atualiza_Lista();
+            Limpatela();
 
+            imposto = (int.Parse(TxtPorcentagemImposto.Text));
+            TxtPorcentagemImposto.Text = imposto.ToString();
+            lucro = (int.Parse(TxtPorcentagemLucro.Text));
+            TxtPorcentagemLucro.Text = lucro.ToString();
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

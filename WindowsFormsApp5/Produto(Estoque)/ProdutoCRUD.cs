@@ -11,14 +11,15 @@ namespace WindowsFormsApp5
 {
     public partial class ProdutoCRUD : Form
     {
+        public int EstoqueBaixoInicial, EstoqueBaixoFinal, EstoqueRegularInicial, EstoqueRegularFinal;
+
         public ProdutoCRUD()
         {
             InitializeComponent();
-
+            Conexao_Cor();
             Conexao_Produto();
-
+            Verificar_Quantidade();
         }
-
 
         public void Conexao_Produto()
         {
@@ -29,15 +30,16 @@ namespace WindowsFormsApp5
             cmd.Parameters.AddWithValue("@nome", lblPesq.Text);
             cmd.Parameters.AddWithValue("@fornecedor", lblPesqFornecedor.Text);
             cmd.CommandType = CommandType.StoredProcedure;
+            
             con.Open();
+
             try
             {
                 SqlDataReader i = cmd.ExecuteReader();
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5], i[6]);
-         
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7]);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                     this.GridTotal.EnableHeadersVisualStyles = false;
@@ -58,35 +60,46 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+            private void button1_Click(object sender, EventArgs e)
         {
             CadastrarProduto cadastrar = new CadastrarProduto(this);
             cadastrar.ShowDialog();
 
         }
 
+        public void Verificar_Quantidade()
+        {
+            for (int i = 0; i < GridTotal.Rows.Count; i++)
+            {
+                int verificar = Int32.Parse(GridTotal.Rows[i].Cells[3].Value.ToString());
+                if (verificar >= 50 && verificar < 100)
+                {
+                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 255, 0);
+                }
+                else if (verificar < 50)
+                {
+                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 0, 0);
+                }
+                else
+                {
+                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(0, 255, 102);
+                }
+            }
+        }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
         private void label4_Click(object sender, EventArgs e)
         {
             PnlPesquisa.Visible = true;
         }
-
-      
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             PnlPesquisa.Visible = false;
             lbluser.Visible = true;
-
         }
-
-
         private void lblPesq_TextChanged(object sender, EventArgs e)
         {
             Atualiza_Lista();
@@ -127,13 +140,10 @@ namespace WindowsFormsApp5
                 con.Close();
 
             }
-
         }
-
         private void ExportToExcel()
         {
             var sb = new StringBuilder();
-
             var headers = GridTotal.Columns.Cast<DataGridViewColumn>();
             sb.AppendLine(string.Join(";", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
 
@@ -229,5 +239,57 @@ namespace WindowsFormsApp5
         {
 
         }
+
+        private void lblMensagem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridTotal_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {  
+            
+        }
+      
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            FiltroEstoque filtro = new FiltroEstoque(this, EstoqueBaixoInicial, EstoqueBaixoFinal, EstoqueRegularInicial, EstoqueRegularFinal);
+            filtro.ShowDialog(); 
+        }
+
+        public void Conexao_Cor()
+        {
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_cor", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            try
+            {
+                SqlDataReader i = cmd.ExecuteReader();
+                while (i.Read())
+                {
+                    string nome = (string)i[0];
+
+                    if (nome == "vermelho")
+                    {
+                        EstoqueBaixoInicial = (int)i[1];
+                        EstoqueBaixoFinal = (int)i[2];
+                    }
+                    if (nome == "amarelo")
+                    {
+                        EstoqueRegularInicial = (int)i[1];
+                        EstoqueRegularFinal = (int)i[2];
+                    }
+                }
+            }
+
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

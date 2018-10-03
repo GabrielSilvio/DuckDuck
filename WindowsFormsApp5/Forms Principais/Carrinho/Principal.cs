@@ -272,5 +272,10 @@ namespace WindowsFormsApp5
         {
 
         }
+
+        private void FrmPri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

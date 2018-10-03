@@ -112,6 +112,18 @@
     <Compile Include="Produto%28Estoque%29\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto%28Estoque%29\FiltroEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\FiltroEstoque.Designer.cs">
+      <DependentUpon>FiltroEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\InserçãoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\InserçãoEstoque.Designer.cs">
+      <DependentUpon>InserçãoEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto%28Estoque%29\ProdutoCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\FiltroEstoque.resx">
+      <DependentUpon>FiltroEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\InserçãoEstoque.resx">
+      <DependentUpon>InserçãoEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\ProdutoCRUD.resx">
       <DependentUpon>ProdutoCRUD.cs</DependentUpon>
