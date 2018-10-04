@@ -42,9 +42,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbluser = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblContador = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.sRetornaCadastrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.s_Retorna_CadastrosTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter();
+           // this.s_Retorna_CadastrosTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter();
             this.duck_DuckDataSet = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.duckDuckDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tloginBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,7 +68,6 @@
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Validade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlPesquisa = new System.Windows.Forms.Panel();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblPesqFornecedor = new System.Windows.Forms.TextBox();
@@ -71,17 +77,12 @@
             this.lblMensagem = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblContador = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sRetornaCadastrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet)).BeginInit();
@@ -94,8 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridTotal)).BeginInit();
             this.PnlPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,12 +177,106 @@
             this.lbluser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(835, 10);
+            this.lbluser.Location = new System.Drawing.Point(12, 28);
             this.lbluser.Name = "lbluser";
             this.lbluser.Size = new System.Drawing.Size(165, 20);
             this.lbluser.TabIndex = 1004;
             this.lbluser.Text = "Pesquisar Produtos";
             this.lbluser.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.lblContador);
+            this.panel2.Controls.Add(this.lbluser);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 477);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 63);
+            this.panel2.TabIndex = 3;
+            // 
+            // lblContador
+            // 
+            this.lblContador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblContador.AutoSize = true;
+            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContador.ForeColor = System.Drawing.Color.White;
+            this.lblContador.Location = new System.Drawing.Point(354, 24);
+            this.lblContador.Name = "lblContador";
+            this.lblContador.Size = new System.Drawing.Size(25, 25);
+            this.lblContador.TabIndex = 1004;
+            this.lblContador.Text = "0";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Location = new System.Drawing.Point(612, 16);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(136, 31);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Excluir";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(754, 16);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 31);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Modificar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(896, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 31);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::WindowsFormsApp5.Properties.Resources.excel;
+            this.pictureBox4.Location = new System.Drawing.Point(272, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(220, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // duck_DuckDataSet1
             // 
@@ -197,7 +290,7 @@
             // 
             // s_Retorna_CadastrosTableAdapter
             // 
-            this.s_Retorna_CadastrosTableAdapter.ClearBeforeFill = true;
+            //this.s_Retorna_CadastrosTableAdapter.ClearBeforeFill = true;
             // 
             // duck_DuckDataSet
             // 
@@ -261,8 +354,7 @@
             this.quantidade,
             this.preco,
             this.precoFornecedor,
-            this.Fornecedor,
-            this.Validade});
+            this.Fornecedor});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,7 +375,6 @@
             this.GridTotal.TabIndex = 7;
             this.GridTotal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellClick);
             this.GridTotal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellContentClick);
-            this.GridTotal.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridTotal_CellPainting);
             // 
             // Column1
             // 
@@ -336,18 +427,12 @@
             this.Fornecedor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Fornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Validade
-            // 
-            this.Validade.HeaderText = "Data de validade";
-            this.Validade.Name = "Validade";
-            // 
             // PnlPesquisa
             // 
             this.PnlPesquisa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.PnlPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlPesquisa.Controls.Add(this.lblFornecedor);
             this.PnlPesquisa.Controls.Add(this.lblPesqFornecedor);
-            this.PnlPesquisa.Controls.Add(this.lbluser);
             this.PnlPesquisa.Controls.Add(this.label3);
             this.PnlPesquisa.Controls.Add(this.pictureBox6);
             this.PnlPesquisa.Controls.Add(this.lblPesq);
@@ -428,7 +513,6 @@
             this.lblMensagem.TabIndex = 10;
             this.lblMensagem.Text = ".";
             this.lblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMensagem.Click += new System.EventHandler(this.lblMensagem_Click);
             // 
             // printPreviewDialog1
             // 
@@ -440,120 +524,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::WindowsFormsApp5.Properties.Resources.excel;
-            this.pictureBox4.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 35);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(931, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 31);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(823, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 31);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(705, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 31);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // lblContador
-            // 
-            this.lblContador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblContador.AutoSize = true;
-            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContador.ForeColor = System.Drawing.Color.White;
-            this.lblContador.Location = new System.Drawing.Point(70, 22);
-            this.lblContador.Name = "lblContador";
-            this.lblContador.Size = new System.Drawing.Size(25, 25);
-            this.lblContador.TabIndex = 1004;
-            this.lblContador.Text = "0";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(587, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 31);
-            this.button4.TabIndex = 1020;
-            this.button4.Text = "Filtro";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.lblContador);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 477);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 63);
-            this.panel2.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(466, 16);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 31);
-            this.button5.TabIndex = 1021;
-            this.button5.Text = "Inserção";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // ProdutoCRUD
             // 
@@ -575,6 +545,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sRetornaCadastrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet)).EndInit();
@@ -588,9 +562,6 @@
             this.PnlPesquisa.ResumeLayout(false);
             this.PnlPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -598,9 +569,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource sRetornaCadastrosBindingSource;
         private Duck_DuckDataSet1 duck_DuckDataSet1;
-        private Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter s_Retorna_CadastrosTableAdapter;
+        //private Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter s_Retorna_CadastrosTableAdapter;
         private System.Windows.Forms.BindingSource duckDuckDataSetBindingSource;
         private Duck_DuckDataSet1 duck_DuckDataSet;
         private System.Windows.Forms.BindingSource tloginBindingSource;
@@ -620,6 +597,7 @@
         private System.Windows.Forms.TextBox lblPesq;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.Label lblMensagem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -632,14 +610,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         private System.Windows.Forms.DataGridViewTextBoxColumn precoFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lblContador;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
     }
 }

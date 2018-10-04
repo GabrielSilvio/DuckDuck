@@ -32,6 +32,7 @@ namespace WindowsFormsApp5
         private void button1_Click(object sender, EventArgs e)
         {
             Edita_login();
+            this.Close();
         }
         public void Retorna_Informações()
         {
@@ -78,6 +79,7 @@ namespace WindowsFormsApp5
             cmd.Parameters.AddWithValue("@login" , TxtLogin.Text);
             cmd.Parameters.AddWithValue("@nome"  , TxtNome.Text);
             cmd.Parameters.AddWithValue("@email" , TxtEmail.Text);
+            cmd.Parameters.AddWithValue("@senha",  TxtSenha.Text);
             cmd.Parameters.AddWithValue("@cCargo", cCargo);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();

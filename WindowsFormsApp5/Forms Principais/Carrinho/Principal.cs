@@ -18,9 +18,11 @@ namespace WindowsFormsApp5
             InitializeComponent();          
             loginUsuario = text;
             LblUser.Text = loginUsuario;
+            RetornaCodigoLogin();
             Retorna_Produto();
             Retorna_Carrinho();
         }
+        public int CodigoUsuario;
         private void LblUser_MouseMove(object sender, MouseEventArgs e)
         {
             LblUser.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3E7884");
@@ -73,10 +75,7 @@ namespace WindowsFormsApp5
         public int codigoCarrinho = -100;
         private void GridCarrinho_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-                return;
-            DataGridViewRow dadosCarrinho = GridCarrinho.Rows[e.RowIndex];
-            codigoCarrinho = (int)dadosCarrinho.Cells[0].Value;
+            
         }
 
         private void GridProduto_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -87,7 +86,14 @@ namespace WindowsFormsApp5
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            if (codigoCarrinho != -100)
+            {
+                //
+                editacarrinho formcarrinho = new editacarrinho(this, codigoCarrinho);
+                formcarrinho.Show();
+            }
+            else
+                MessageBox.Show("selecione um objeto");
         }
         public void Retorna_Produto()
         { 
@@ -111,7 +117,7 @@ namespace WindowsFormsApp5
                 while (i.Read())
                 {
                     GridProduto.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
-                    lblTotal.Text = i[5].ToString(); //quantidade 
+                    string valortotal = i[5].ToString(); //quantidade 
                     contador++;
                 }
             }
@@ -124,29 +130,31 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
+        public int total;
         public void Retorna_Carrinho()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Carrinho", con);
-            cmd.Parameters.AddWithValue("@login", loginUsuario);
+            cmd.Parameters.AddWithValue("@cLogin", CodigoUsuario);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
             {
+                this.GridCarrinho.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
+                this.GridCarrinho.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                this.GridCarrinho.EnableHeadersVisualStyles = false;
+                this.GridCarrinho.RowsDefaultCellStyle.BackColor = Color.Bisque;
+                this.GridCarrinho.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
                 SqlDataReader i = cmd.ExecuteReader();
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridCarrinho.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
-
-                    this.GridCarrinho.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
-                    this.GridCarrinho.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                    this.GridCarrinho.EnableHeadersVisualStyles = false;
-                    this.GridCarrinho.RowsDefaultCellStyle.BackColor = Color.Bisque;
-                    this.GridCarrinho.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+                    GridCarrinho.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5]);
                     contador++;
-
                 }
+
+                lblTotal.Text = total.ToString();
             }
             catch (Exception ex)
             {
@@ -220,12 +228,14 @@ namespace WindowsFormsApp5
 
         }
 
+
+
         void Finalizar_Carrinho()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Finaliza_Carrinho", con);
             cmd.Parameters.AddWithValue("@dataVenda"     , DateTime.Now);
-            cmd.Parameters.AddWithValue("@loginUsuario"  , loginUsuario);
+            cmd.Parameters.AddWithValue("@cUsuario"  ,CodigoUsuario);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
             try
@@ -272,10 +282,37 @@ namespace WindowsFormsApp5
         {
 
         }
-
-        private void FrmPri_Load(object sender, EventArgs e)
+        public void RetornaCodigoLogin()
         {
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Codigo_Usuario", con);
+            cmd.Parameters.AddWithValue("@loginUsuario", loginUsuario);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            try
+            {
+                SqlDataReader i = cmd.ExecuteReader();
+                while (i.Read())
+                {
+                    CodigoUsuario = ((int)i[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
+        private void GridCarrinho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+            DataGridViewRow dadosCarrinho = GridCarrinho.Rows[e.RowIndex];
+            codigoCarrinho = (int)dadosCarrinho.Cells[0].Value;
         }
     }
 }

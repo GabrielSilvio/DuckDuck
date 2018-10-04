@@ -37,11 +37,11 @@ namespace WindowsFormsApp5
             int row = ((int)cbxCargo.SelectedValue);
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Cria_Login", con);
-            cmd.Parameters.AddWithValue("@nome",  TxtNome.Text);
-            cmd.Parameters.AddWithValue("@login", TxtLogin.Text);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
-            cmd.Parameters.AddWithValue("@Ccargo", row);
+            cmd.Parameters.AddWithValue("@nome",   TxtNome.Text);
+            cmd.Parameters.AddWithValue("@login",  TxtLogin.Text);
+            cmd.Parameters.AddWithValue("@email",  txtEmail.Text);
+            cmd.Parameters.AddWithValue("@senha",  txtSenha.Text);
+            cmd.Parameters.AddWithValue("@cCargo", row);
             //seta o valor apra inserção da procedure
             
             

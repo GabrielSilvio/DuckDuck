@@ -50,7 +50,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.sRetornaCadastrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.s_Retorna_CadastrosTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter();
+           // this.s_Retorna_CadastrosTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter();
             this.duck_DuckDataSet = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.duckDuckDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tloginBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -298,7 +298,7 @@
             // 
             // s_Retorna_CadastrosTableAdapter
             // 
-            this.s_Retorna_CadastrosTableAdapter.ClearBeforeFill = true;
+            //this.s_Retorna_CadastrosTableAdapter.ClearBeforeFill = true;
             // 
             // duck_DuckDataSet
             // 
@@ -542,7 +542,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource sRetornaCadastrosBindingSource;
         private Duck_DuckDataSet1 duck_DuckDataSet1;
-        private Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter s_Retorna_CadastrosTableAdapter;
+       // private Duck_DuckDataSet1TableAdapters.s_Retorna_CadastrosTableAdapter s_Retorna_CadastrosTableAdapter;
         private System.Windows.Forms.BindingSource duckDuckDataSetBindingSource;
         private Duck_DuckDataSet1 duck_DuckDataSet;
         private System.Windows.Forms.BindingSource tloginBindingSource;

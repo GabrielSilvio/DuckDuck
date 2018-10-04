@@ -6,6 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+
+
+
 
 namespace WindowsFormsApp5
 {
@@ -16,7 +22,6 @@ namespace WindowsFormsApp5
             InitializeComponent();
 
             Conexao_fornecedor();
-
         }
 
 
@@ -35,7 +40,7 @@ namespace WindowsFormsApp5
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4]);
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5]);
 
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -233,6 +238,14 @@ namespace WindowsFormsApp5
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.printDocument1.DefaultPageSettings.Landscape = true;
+            DGVPrinter printer = new DGVPrinter();
+            printer.PrintDataGridView(GridTotal);
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
         }

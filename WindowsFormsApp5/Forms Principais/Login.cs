@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace WindowsFormsApp5
 {
     public partial class FrmLogin : Form
@@ -17,19 +18,25 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
             TxtLogin.Text = Properties.Settings.Default.login;
+
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
         public static string login;
         public void button1_Click(object sender, EventArgs e)
         {
             carrega_login();
+            
         }
         private void carrega_login()
         {
@@ -38,10 +45,10 @@ namespace WindowsFormsApp5
             cmd.Parameters.AddWithValue("@login", TxtLogin.Text);
             cmd.Parameters.AddWithValue("@senha", TxtSenha.Text);
             cmd.CommandType = CommandType.StoredProcedure;
-            login = TxtLogin.Text;
             con.Open();
             try
             {
+                login = TxtLogin.Text;
                 Properties.Settings.Default.login = TxtLogin.Text;
                 Properties.Settings.Default.Save();
                 int i = cmd.ExecuteNonQuery();
@@ -49,6 +56,7 @@ namespace WindowsFormsApp5
                 this.Hide();
                 con.Close();
                 frmPri.ShowDialog();
+                 
             }
             catch (Exception ex)
             {
@@ -59,10 +67,12 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
+
         private void FrmLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
             carrega_login(); 
         }
+
         private void TxtSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -71,5 +81,6 @@ namespace WindowsFormsApp5
             }
         }
     }
+
 }
 

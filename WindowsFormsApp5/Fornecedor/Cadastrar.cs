@@ -21,6 +21,7 @@ namespace WindowsFormsApp5
             this.telacadastro = telacadastro;
             TxtTelefone.GotFocus += TxtTelefone_GotFocus;
             TxtTelefone.LostFocus += TxtTelefone_LostFocus;
+            
         }
         public bool FocusedT = false; 
 
@@ -36,7 +37,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
             {
-                CriaFornecedor();
+                testaInsercao();
                 telacadastro.Atualiza_Lista();
             }
 
@@ -50,9 +51,18 @@ namespace WindowsFormsApp5
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Cria_Fornecedor", con);
-            cmd.Parameters.AddWithValue("@nome",  TxtNome.Text);
-            cmd.Parameters.AddWithValue("@telefone", TxtTelefone.Text);
-            cmd.Parameters.AddWithValue("@email", TxtEmail.Text);
+            cmd.Parameters.AddWithValue("@empresa"  , 0);
+            cmd.Parameters.AddWithValue("@nome"     , TxtNome.Text);
+            cmd.Parameters.AddWithValue("@email"    , TxtEmail.Text);
+            cmd.Parameters.AddWithValue("@sexo"     , cboSexo.Text);
+            cmd.Parameters.AddWithValue("@telefone" , TxtTelefone.Text);
+            cmd.Parameters.AddWithValue("@celular"  , TxtCelular.Text);
+            cmd.Parameters.AddWithValue("@CEP"      , TxtCEP.Text);
+            cmd.Parameters.AddWithValue("@RG"       , TxtRG.Text);
+            cmd.Parameters.AddWithValue("@CPF"      , TxtCPF.Text);
+            cmd.Parameters.AddWithValue("@CNPJ"     , "");
+            cmd.Parameters.AddWithValue("@IE"       , "");
+            cmd.Parameters.AddWithValue("@endereco" , TxtEndereco.Text);
             cmd.Parameters.AddWithValue("@descricao", TxtDescricao.Text);
             //seta o valor apra inserção da procedure
             
@@ -75,6 +85,57 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
+        private void CriaFornecedorEmpresa()
+        {
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Cria_Fornecedor", con);
+            cmd.Parameters.AddWithValue("@empresa"  , 1);
+            cmd.Parameters.AddWithValue("@nome"     , TxtNomeEmpresa.Text);
+            cmd.Parameters.AddWithValue("@email"    , TxtEmailEmpresa.Text);
+            cmd.Parameters.AddWithValue("@sexo"     , "");
+            cmd.Parameters.AddWithValue("@telefone" , TxtTelefoneEmpresa.Text);
+            cmd.Parameters.AddWithValue("@celular"  , txtCelularEmrpesa.Text);
+            cmd.Parameters.AddWithValue("@CEP"      , TxtCEPEmpresa.Text);
+            cmd.Parameters.AddWithValue("@RG"       , "");
+            cmd.Parameters.AddWithValue("@CPF"      , "");
+            cmd.Parameters.AddWithValue("@CNPJ"     , TxtCNPJEmpresa.Text);
+            cmd.Parameters.AddWithValue("@IE"       , TxtIEEmpresa.Text);
+            cmd.Parameters.AddWithValue("@endereco" , TxtEnderecoEmpresa.Text);
+            cmd.Parameters.AddWithValue("@descricao", TxtDescricaoEmpresa.Text);
+            //seta o valor apra inserção da procedure
+
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+                telacadastro.Atualiza_Lista();
+                Limpar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        private void testaInsercao()
+        {
+            if (cbkEmpresa.Checked)
+            {
+                CriaFornecedorEmpresa();
+                //empresa = 1;
+            }
+            else
+            {
+                CriaFornecedor();
+                //empresa = 0;
+            }
+        }
 
         private void Cadastrar_Load(object sender, EventArgs e)
         {
@@ -92,5 +153,40 @@ namespace WindowsFormsApp5
             }
             FocusedT = true;  
     }
-}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTelefone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            verifica_panel();
+        }
+
+        private void verifica_panel()
+        {
+            if (cbkEmpresa.Checked)
+            {
+                pnlEmpresa.Visible = true;
+            }
+            else
+                pnlEmpresa.Visible = false;
+        }
+    }
 }

@@ -77,10 +77,9 @@ namespace WindowsFormsApp5
             cmd.Parameters.AddWithValue("@codigo"			 , codigo);
             cmd.Parameters.AddWithValue("@nome"			     , TxtNome.Text);
             cmd.Parameters.AddWithValue("@detalhes"		     , TxtDetalhes.Text);
-            cmd.Parameters.AddWithValue("@quantidade"		 , TxtPreco.Text);
-            cmd.Parameters.AddWithValue("@preco"			 , TxtPrecoFornecedor.Text);
-            cmd.Parameters.AddWithValue("@precoFonecedor"    , TxtQuantidade.Text);
-            cmd.Parameters.AddWithValue("@cFornecedor"       , TxtFornecedor.Text);
+            cmd.Parameters.AddWithValue("@quantidade"		 , TxtQuantidade.Text);
+            cmd.Parameters.AddWithValue("@preco"			 , TxtPreco.Text);
+            cmd.Parameters.AddWithValue("@precoFonercedor"   , TxtPrecoFornecedor.Text);
 
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();

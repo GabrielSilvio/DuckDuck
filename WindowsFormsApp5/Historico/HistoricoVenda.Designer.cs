@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridHisVen = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,9 +74,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridHisVen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridHisVen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridHisVen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Nome,
             this.Descrição,
             this.Telefone,
@@ -98,39 +95,33 @@
             this.GridHisVen.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.GridHisVen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridHisVen.ShowEditingIcon = false;
-            this.GridHisVen.Size = new System.Drawing.Size(800, 377);
+            this.GridHisVen.Size = new System.Drawing.Size(1143, 605);
             this.GridHisVen.TabIndex = 9;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
+            this.GridHisVen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridHisVen_CellContentClick);
             // 
             // Nome
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.HeaderText = "Nome";
+            this.Nome.HeaderText = "Usuario";
             this.Nome.Name = "Nome";
             // 
             // Descrição
             // 
             this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Descrição.FillWeight = 200F;
-            this.Descrição.HeaderText = "Descricao";
+            this.Descrição.HeaderText = "Produto";
             this.Descrição.Name = "Descrição";
             // 
             // Telefone
             // 
             this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.HeaderText = "Quantidade";
             this.Telefone.Name = "Telefone";
             // 
             // email
             // 
             this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.HeaderText = "email";
+            this.email.HeaderText = "Data Venda";
             this.email.Name = "email";
             // 
             // panel1
@@ -144,7 +135,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 73);
+            this.panel1.Size = new System.Drawing.Size(1143, 73);
             this.panel1.TabIndex = 8;
             // 
             // label4
@@ -153,7 +144,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(298, 19);
+            this.label4.Location = new System.Drawing.Point(469, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(224, 25);
             this.label4.TabIndex = 1004;
@@ -197,13 +188,14 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::WindowsFormsApp5.Properties.Resources.leftarrow;
-            this.pictureBox3.Location = new System.Drawing.Point(732, 14);
+            this.pictureBox3.Location = new System.Drawing.Point(1075, 14);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(43, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -222,9 +214,9 @@
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 387);
+            this.panel2.Location = new System.Drawing.Point(0, 615);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 63);
+            this.panel2.Size = new System.Drawing.Size(1143, 63);
             this.panel2.TabIndex = 10;
             // 
             // BtnFil
@@ -234,7 +226,7 @@
             this.BtnFil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFil.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnFil.Location = new System.Drawing.Point(472, 20);
+            this.BtnFil.Location = new System.Drawing.Point(815, 20);
             this.BtnFil.Name = "BtnFil";
             this.BtnFil.Size = new System.Drawing.Size(136, 31);
             this.BtnFil.TabIndex = 1005;
@@ -248,7 +240,7 @@
             this.lblContador.AutoSize = true;
             this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContador.ForeColor = System.Drawing.Color.White;
-            this.lblContador.Location = new System.Drawing.Point(226, 23);
+            this.lblContador.Location = new System.Drawing.Point(397, 23);
             this.lblContador.Name = "lblContador";
             this.lblContador.Size = new System.Drawing.Size(25, 25);
             this.lblContador.TabIndex = 1004;
@@ -261,12 +253,13 @@
             this.BtnExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExc.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnExc.Location = new System.Drawing.Point(639, 20);
+            this.BtnExc.Location = new System.Drawing.Point(982, 20);
             this.BtnExc.Name = "BtnExc";
             this.BtnExc.Size = new System.Drawing.Size(136, 31);
             this.BtnExc.TabIndex = 15;
             this.BtnExc.Text = "Excluir";
             this.BtnExc.UseVisualStyleBackColor = false;
+            this.BtnExc.Click += new System.EventHandler(this.BtnExc_Click);
             // 
             // pictureBox4
             // 
@@ -283,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1143, 678);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GridHisVen);
             this.Controls.Add(this.panel1);
@@ -291,6 +284,7 @@
             this.Name = "HistoricoVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HistoricoVenda";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.GridHisVen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -307,11 +301,6 @@
         #endregion
 
         public System.Windows.Forms.DataGridView GridHisVen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -324,5 +313,9 @@
         private System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.Button BtnExc;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
     }
 }

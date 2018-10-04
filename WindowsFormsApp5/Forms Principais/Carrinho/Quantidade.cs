@@ -33,7 +33,7 @@ namespace WindowsFormsApp5.Forms_Principais.Carrinho
             SqlCommand cmd = new SqlCommand("s_Insere_Carrinho", con);
             cmd.Parameters.AddWithValue    ("@codigo", codigo);
             cmd.Parameters.AddWithValue    ("@quantidade", dmpQuantidade.Text);
-            cmd.Parameters.AddWithValue    ("@loginUsuario", formPrincipal.loginUsuario);
+            cmd.Parameters.AddWithValue    ("@cLogin", formPrincipal.CodigoUsuario);
             //seta o valor para inserção da procedure
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
