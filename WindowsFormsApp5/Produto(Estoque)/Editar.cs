@@ -43,12 +43,16 @@ namespace WindowsFormsApp5
                 SqlDataReader i = cmd.ExecuteReader();
                 if (i.Read())
                 {
-                    TxtNome.Text            = i["nome"           ].ToString();
-                    TxtDetalhes.Text        = i["detalhes"       ].ToString();
-                    TxtPreco.Text           = i["preco"          ].ToString();
-                    TxtPrecoFornecedor.Text = i["precoFornecedor"].ToString();
-                    TxtQuantidade.Text      = i["quantidade"     ].ToString();
-                    TxtFornecedor.Text      = i["fornecedor"     ].ToString();
+                    TxtNome.Text               =i["nome"           ].ToString();
+                    TxtDetalhes.Text           =i["detalhes"       ].ToString();
+                    TxtPrecoTotal.Text         =i["preco"          ].ToString();
+                    TxtPrecoFornecedor.Text    =i["precoFornecedor"].ToString();
+                    TxtQuantidade.Text         =i["quantidade"     ].ToString();
+                    CbxForncedor.Text          =i["fornecedor"     ].ToString();
+                    TxtPorcentagemLucro.Text   =i["lucro"          ].ToString();
+                    TxtPorcentagemImposto.Text =i["imposto"        ].ToString();
+                    DtmFabricacao.Text         =i["fabricacao"     ].ToString();
+                    DtmValidade.Text           =i["validade"       ].ToString();
                 }
             }
             catch (Exception ex)
@@ -74,12 +78,17 @@ namespace WindowsFormsApp5
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand    cmd = new SqlCommand("s_Edita_Dados_Produto", con);
-            cmd.Parameters.AddWithValue("@codigo"			 , codigo);
-            cmd.Parameters.AddWithValue("@nome"			     , TxtNome.Text);
-            cmd.Parameters.AddWithValue("@detalhes"		     , TxtDetalhes.Text);
-            cmd.Parameters.AddWithValue("@quantidade"		 , TxtQuantidade.Text);
-            cmd.Parameters.AddWithValue("@preco"			 , TxtPreco.Text);
-            cmd.Parameters.AddWithValue("@precoFonercedor"   , TxtPrecoFornecedor.Text);
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+            cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
+            cmd.Parameters.AddWithValue("@detalhes", TxtDetalhes.Text);
+            cmd.Parameters.AddWithValue("@quantidade", TxtQuantidade.Text);
+            cmd.Parameters.AddWithValue("@preco", TxtPrecoTotal.Text);
+            cmd.Parameters.AddWithValue("@precoFonecedor", TxtPrecoFornecedor.Text);
+            cmd.Parameters.AddWithValue("@cFornecedor", (int)CbxForncedor.SelectedValue);
+            cmd.Parameters.AddWithValue("@porcentagemImposto", TxtPorcentagemImposto.Text);
+            cmd.Parameters.AddWithValue("@porcentagemLucro", TxtPorcentagemLucro.Text);
+            cmd.Parameters.AddWithValue("@validade", DtmValidade.Value);
+            cmd.Parameters.AddWithValue("@fabricacao", DtmFabricacao.Value);
 
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -97,6 +106,18 @@ namespace WindowsFormsApp5
             {
                 con.Close();
                 this.Close();
+            }
+        }
+
+        private void ChkValidade_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkValidade.Checked)
+            {
+                PnlValidade.Visible = false;
+            }
+            else
+            {
+                PnlValidade.Visible = true;
             }
         }
     }

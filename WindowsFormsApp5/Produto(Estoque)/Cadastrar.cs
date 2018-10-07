@@ -39,12 +39,16 @@ namespace WindowsFormsApp5
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Cria_Produto", con); //procedure
             //seta o valor para inserção da procedure
-            cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
-            cmd.Parameters.AddWithValue("@detalhes", TxtDetalhes.Text);
-            cmd.Parameters.AddWithValue("@quantidade", TxtQuantidade.Text);
-            cmd.Parameters.AddWithValue("@preco", TxtPreco.Text);
-            cmd.Parameters.AddWithValue("@precoFonecedor", TxtPrecoFornecedor.Text);
-            cmd.Parameters.AddWithValue("@cFornecedor", (int)CbxForncedor.SelectedValue);
+            cmd.Parameters.AddWithValue("@nome"                 , TxtNome.Text);
+            cmd.Parameters.AddWithValue("@detalhes"             , TxtDetalhes.Text);
+            cmd.Parameters.AddWithValue("@quantidade"           , TxtQuantidade.Text);
+            cmd.Parameters.AddWithValue("@preco"                , TxtPrecoTotal.Text);
+            cmd.Parameters.AddWithValue("@precoFonecedor"       , TxtPrecoFornecedor.Text);
+            cmd.Parameters.AddWithValue("@cFornecedor"          , (int)CbxForncedor.SelectedValue); 
+            cmd.Parameters.AddWithValue("@porcentagemImposto"   , TxtPorcentagemImposto.Text);
+            cmd.Parameters.AddWithValue("@porcentagemLucro"     , TxtPorcentagemLucro.Text);
+            cmd.Parameters.AddWithValue("@validade"             , DtmValidade.Value);
+            cmd.Parameters.AddWithValue("@fabricacao", DtmFabricacao.Value);
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
@@ -66,7 +70,7 @@ namespace WindowsFormsApp5
         {
             TxtDetalhes.Clear();
             TxtNome.Clear();
-            TxtPreco.Clear();
+            TxtPrecoTotal.Clear();
             TxtPrecoFornecedor.Clear();
             TxtQuantidade.Clear();
         }
@@ -88,6 +92,33 @@ namespace WindowsFormsApp5
         }
 
         private void TxtDescricao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkValidade.Checked)
+            {
+                PnlValidade.Visible = false;
+            }
+            else
+            {
+                PnlValidade.Visible = true;
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbxForncedor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
