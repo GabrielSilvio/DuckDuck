@@ -304,7 +304,6 @@
             this.CbxForncedor.Size = new System.Drawing.Size(175, 21);
             this.CbxForncedor.TabIndex = 1040;
             this.CbxForncedor.ValueMember = "codigo";
-            this.CbxForncedor.SelectedIndexChanged += new System.EventHandler(this.CbxForncedor_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -355,6 +354,7 @@
             this.TxtPrecoTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPrecoTotal.Enabled = false;
             this.TxtPrecoTotal.Location = new System.Drawing.Point(241, 117);
             this.TxtPrecoTotal.MaxLength = 50;
             this.TxtPrecoTotal.Multiline = true;
@@ -443,6 +443,7 @@
             this.TxtPorcentagemLucro.Size = new System.Drawing.Size(175, 21);
             this.TxtPorcentagemLucro.TabIndex = 1033;
             this.TxtPorcentagemLucro.Tag = "";
+            this.TxtPorcentagemLucro.TextChanged += new System.EventHandler(this.TxtPorcentagemLucro_TextChanged);
             // 
             // TxtPorcentagemImposto
             // 
@@ -479,7 +480,7 @@
             this.button2.TabIndex = 1046;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -494,7 +495,7 @@
             this.button1.TabIndex = 1045;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label12
             // 

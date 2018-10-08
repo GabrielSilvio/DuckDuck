@@ -29,13 +29,13 @@ namespace WindowsFormsApp5
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Insere_Produto", con); //procedure
             //seta o valor para inserção da procedure
-            cmd.Parameters.AddWithValue("@usuario", "");
-            cmd.Parameters.AddWithValue("@codigo", TxtCodigo.Text);
-            cmd.Parameters.AddWithValue("@nome", TxtNome.Text);
-            cmd.Parameters.AddWithValue("@quantidade", NudQuandidadeEstoque.Text);
-            cmd.Parameters.AddWithValue("@cFornecedor", (int)CbxFornecedor.SelectedValue);
-            cmd.Parameters.AddWithValue("@validade", DtmValidade.Value);
-            cmd.Parameters.AddWithValue("@fabricacao", DtmFabricacao.Value);
+            cmd.Parameters.AddWithValue("@usuario      ",""                               );
+            cmd.Parameters.AddWithValue("@codigo       ", TxtCodigo.Text                  );
+            cmd.Parameters.AddWithValue("@nome         ", TxtNome.Text                    );
+            cmd.Parameters.AddWithValue("@quantidade   ", NudQuandidadeEstoque.Text       );
+            cmd.Parameters.AddWithValue("@cFornecedor  ", (int)CbxFornecedor.SelectedValue);
+            cmd.Parameters.AddWithValue("@validade     ", DtmValidade.Value               );
+            cmd.Parameters.AddWithValue("@fabricacao   ", DtmFabricacao.Value             );
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
@@ -81,11 +81,13 @@ namespace WindowsFormsApp5
                 SqlDataReader i = cmd.ExecuteReader();
                 if (i.Read())
                 {
-                    TxtNome.Text              = i["nome        "].ToString();
-                    NudQuandidadeEstoque.Text = i["quantidade  "].ToString();
-                    CbxFornecedor.Text        = i["fornecedor  "].ToString();
-                    DtmFabricacao.Text        = i["fabricacao  "].ToString();
-                    DtmValidade.Text          = i["validade    "].ToString();
+                    TxtNome.Text              = i["nome             "].ToString();
+                    NudQuandidadeEstoque.Text = i["quantidade       "].ToString();
+                    CbxFornecedor.Text        = i["fornecedor       "].ToString();
+                    DtmFabricacao.Text        = i["fabricacao       "].ToString();
+                    DtmValidade.Text          = i["validade         "].ToString();
+                    TxtPrecoFornecedor.Text   = i["precoFornecedor  "].ToString();
+                    TxtDetalhes.Text          = i["detalhes         "].ToString();
                 }
             }
             catch (Exception ex)
@@ -97,14 +99,10 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             Busca_Produto();
-        }
-
-        private void NudQuandidadeEstoque_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void NudQuantidadeAdd_ValueChanged_1(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace WindowsFormsApp5
 {
     public partial class CadastrarProduto : Form
     {
+        public int precoFornecedor, porcentagemImposto, porcentagemLucro, precoTotal, precoTotalProduto,precoLucro;
         ProdutoCRUD telacadastro;
 
         public CadastrarProduto(ProdutoCRUD telacadastro)
@@ -21,34 +22,22 @@ namespace WindowsFormsApp5
             this.telacadastro = telacadastro;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CriaProduto();
-            telacadastro.Atualiza_Lista();
-            Limpatela();
-        }
-
         private void CriaProduto()
         {
             //conexão com o Sql Server
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
             SqlCommand cmd = new SqlCommand("s_Cria_Produto", con); //procedure
             //seta o valor para inserção da procedure
-            cmd.Parameters.AddWithValue("@nome"                 , TxtNome.Text);
-            cmd.Parameters.AddWithValue("@detalhes"             , TxtDetalhes.Text);
-            cmd.Parameters.AddWithValue("@quantidade"           , TxtQuantidade.Text);
-            cmd.Parameters.AddWithValue("@preco"                , TxtPrecoTotal.Text);
-            cmd.Parameters.AddWithValue("@precoFonecedor"       , TxtPrecoFornecedor.Text);
-            cmd.Parameters.AddWithValue("@cFornecedor"          , (int)CbxForncedor.SelectedValue); 
-            cmd.Parameters.AddWithValue("@porcentagemImposto"   , TxtPorcentagemImposto.Text);
-            cmd.Parameters.AddWithValue("@porcentagemLucro"     , TxtPorcentagemLucro.Text);
-            cmd.Parameters.AddWithValue("@validade"             , DtmValidade.Value);
-            cmd.Parameters.AddWithValue("@fabricacao", DtmFabricacao.Value);
+            cmd.Parameters.AddWithValue("@nome"                 , TxtNome.Text                   );
+            cmd.Parameters.AddWithValue("@detalhes"             , TxtDetalhes.Text               );
+            cmd.Parameters.AddWithValue("@quantidade"           , TxtQuantidade.Text             );
+            cmd.Parameters.AddWithValue("@preco"                , TxtPrecoTotal.Text             );
+            cmd.Parameters.AddWithValue("@precoFonecedor"       , TxtPrecoFornecedor.Text        );
+            cmd.Parameters.AddWithValue("@cFornecedor"          , (int)CbxForncedor.SelectedValue);
+            cmd.Parameters.AddWithValue("@Imposto"              , TxtPorcentagemImposto.Text     );
+            cmd.Parameters.AddWithValue("@Lucro"                , TxtPorcentagemLucro.Text       );
+            cmd.Parameters.AddWithValue("@validade"             , DtmValidade.Value              );
+            cmd.Parameters.AddWithValue("@dataFabricacao"       , DtmFabricacao.Value            );
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
 
@@ -66,13 +55,39 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
+
+        private void TxtPorcentagemLucro_TextChanged(object sender, EventArgs e)
+        {
+            precoFornecedor = int.Parse(TxtPrecoFornecedor.Text);
+            porcentagemImposto = int.Parse(TxtPorcentagemImposto.Text);
+            porcentagemLucro = int.Parse(TxtPorcentagemLucro.Text);
+
+            precoTotalProduto = (((precoFornecedor * porcentagemImposto) / 100) + precoFornecedor);
+            precoLucro = (precoTotalProduto * (porcentagemLucro / 100));
+            precoTotal = (precoTotalProduto + precoLucro);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //CalcularPrecoTotal();
+            CriaProduto();
+            Limpatela();
+        }
+
         private void Limpatela()
         {
-            TxtDetalhes.Clear();
-            TxtNome.Clear();
-            TxtPrecoTotal.Clear();
-            TxtPrecoFornecedor.Clear();
-            TxtQuantidade.Clear();
+            TxtDetalhes.Clear          ();
+            TxtNome.Clear              ();
+            TxtPrecoTotal.Clear        ();
+            TxtPrecoFornecedor.Clear   ();
+            TxtQuantidade.Clear        ();
+            TxtPorcentagemLucro.Clear  ();
+            TxtPorcentagemImposto.Clear();
         }
 
         private void Cadastrar_Load(object sender, EventArgs e)
@@ -83,17 +98,6 @@ namespace WindowsFormsApp5
             this.t_CargoTableAdapter.Fill(this.duck_DuckDataSet1.t_Cargo);
             // TODO: esta linha de código carrega dados na tabela 'duck_DuckDataSet1.t_login'. Você pode movê-la ou removê-la conforme necessário.
             this.t_loginTableAdapter.Fill(this.duck_DuckDataSet1.t_login);
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtDescricao_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -106,21 +110,6 @@ namespace WindowsFormsApp5
             {
                 PnlValidade.Visible = true;
             }
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CbxForncedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

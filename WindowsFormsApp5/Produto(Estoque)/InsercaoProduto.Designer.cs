@@ -58,6 +58,10 @@
             this.TxtQuantidadeFinal = new System.Windows.Forms.TextBox();
             this.NudQuantidadeAdd = new System.Windows.Forms.NumericUpDown();
             this.NudQuandidadeEstoque = new System.Windows.Forms.NumericUpDown();
+            this.TxtDetalhes = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtPrecoFornecedor = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tFornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duckDuckDataSet1BindingSource)).BeginInit();
@@ -72,7 +76,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 322);
+            this.panel2.Size = new System.Drawing.Size(5, 320);
             this.panel2.TabIndex = 1026;
             // 
             // panel4
@@ -82,7 +86,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(749, 38);
+            this.panel4.Size = new System.Drawing.Size(804, 38);
             this.panel4.TabIndex = 1020;
             // 
             // label5
@@ -91,7 +95,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(210, 9);
+            this.label5.Location = new System.Drawing.Point(238, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(288, 25);
             this.label5.TabIndex = 1001;
@@ -101,18 +105,18 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(744, 38);
+            this.panel1.Location = new System.Drawing.Point(799, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 322);
+            this.panel1.Size = new System.Drawing.Size(5, 320);
             this.panel1.TabIndex = 1033;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 355);
+            this.panel3.Location = new System.Drawing.Point(5, 353);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(739, 5);
+            this.panel3.Size = new System.Drawing.Size(794, 5);
             this.panel3.TabIndex = 1034;
             // 
             // BtnCancelar
@@ -122,7 +126,7 @@
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnCancelar.Location = new System.Drawing.Point(572, 291);
+            this.BtnCancelar.Location = new System.Drawing.Point(620, 291);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(150, 31);
             this.BtnCancelar.TabIndex = 1039;
@@ -137,7 +141,7 @@
             this.BtnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInserir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInserir.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnInserir.Location = new System.Drawing.Point(391, 291);
+            this.BtnInserir.Location = new System.Drawing.Point(620, 213);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.Size = new System.Drawing.Size(143, 31);
             this.BtnInserir.TabIndex = 1038;
@@ -152,7 +156,7 @@
             this.BtnDadosFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDadosFornecedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDadosFornecedor.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnDadosFornecedor.Location = new System.Drawing.Point(391, 138);
+            this.BtnDadosFornecedor.Location = new System.Drawing.Point(620, 136);
             this.BtnDadosFornecedor.Name = "BtnDadosFornecedor";
             this.BtnDadosFornecedor.Size = new System.Drawing.Size(31, 25);
             this.BtnDadosFornecedor.TabIndex = 1040;
@@ -166,7 +170,7 @@
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscar.Location = new System.Drawing.Point(572, 64);
+            this.BtnBuscar.Location = new System.Drawing.Point(620, 61);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(143, 31);
             this.BtnBuscar.TabIndex = 1041;
@@ -178,7 +182,7 @@
             // 
             this.TxtCodigo.Location = new System.Drawing.Point(29, 72);
             this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(496, 20);
+            this.TxtCodigo.Size = new System.Drawing.Size(542, 20);
             this.TxtCodigo.TabIndex = 1042;
             // 
             // label1
@@ -238,7 +242,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(213, 119);
+            this.label4.Location = new System.Drawing.Point(424, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 21);
             this.label4.TabIndex = 1049;
@@ -249,9 +253,9 @@
             this.CbxFornecedor.DataSource = this.tFornecedorBindingSource;
             this.CbxFornecedor.DisplayMember = "nome";
             this.CbxFornecedor.FormattingEnabled = true;
-            this.CbxFornecedor.Location = new System.Drawing.Point(217, 143);
+            this.CbxFornecedor.Location = new System.Drawing.Point(428, 143);
             this.CbxFornecedor.Name = "CbxFornecedor";
-            this.CbxFornecedor.Size = new System.Drawing.Size(134, 21);
+            this.CbxFornecedor.Size = new System.Drawing.Size(143, 21);
             this.CbxFornecedor.TabIndex = 1050;
             this.CbxFornecedor.ValueMember = "codigo";
             // 
@@ -342,7 +346,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(387, 197);
+            this.label9.Location = new System.Drawing.Point(424, 197);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(134, 20);
             this.label9.TabIndex = 1058;
@@ -351,7 +355,7 @@
             // TxtQuantidadeFinal
             // 
             this.TxtQuantidadeFinal.Enabled = false;
-            this.TxtQuantidadeFinal.Location = new System.Drawing.Point(391, 224);
+            this.TxtQuantidadeFinal.Location = new System.Drawing.Point(428, 224);
             this.TxtQuantidadeFinal.Name = "TxtQuantidadeFinal";
             this.TxtQuantidadeFinal.Size = new System.Drawing.Size(143, 20);
             this.TxtQuantidadeFinal.TabIndex = 1057;
@@ -371,14 +375,61 @@
             this.NudQuandidadeEstoque.Name = "NudQuandidadeEstoque";
             this.NudQuandidadeEstoque.Size = new System.Drawing.Size(134, 20);
             this.NudQuandidadeEstoque.TabIndex = 1063;
-            this.NudQuandidadeEstoque.ValueChanged += new System.EventHandler(this.NudQuandidadeEstoque_ValueChanged);
+            // 
+            // TxtDetalhes
+            // 
+            this.TxtDetalhes.Location = new System.Drawing.Point(217, 144);
+            this.TxtDetalhes.Multiline = true;
+            this.TxtDetalhes.Name = "TxtDetalhes";
+            this.TxtDetalhes.Size = new System.Drawing.Size(171, 39);
+            this.TxtDetalhes.TabIndex = 1064;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(213, 120);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 21);
+            this.label10.TabIndex = 1065;
+            this.label10.Text = "Detalhes";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(424, 275);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(143, 20);
+            this.label11.TabIndex = 1067;
+            this.label11.Text = "Preço Fornecedor";
+            // 
+            // TxtPrecoFornecedor
+            // 
+            this.TxtPrecoFornecedor.Enabled = false;
+            this.TxtPrecoFornecedor.Location = new System.Drawing.Point(428, 302);
+            this.TxtPrecoFornecedor.Name = "TxtPrecoFornecedor";
+            this.TxtPrecoFornecedor.Size = new System.Drawing.Size(143, 20);
+            this.TxtPrecoFornecedor.TabIndex = 1066;
             // 
             // InsercaoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.ClientSize = new System.Drawing.Size(749, 360);
+            this.ClientSize = new System.Drawing.Size(804, 358);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.TxtPrecoFornecedor);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TxtDetalhes);
             this.Controls.Add(this.NudQuandidadeEstoque);
             this.Controls.Add(this.NudQuantidadeAdd);
             this.Controls.Add(this.BtnInserir);
@@ -449,5 +500,9 @@
         private System.Windows.Forms.TextBox TxtQuantidadeFinal;
         private System.Windows.Forms.NumericUpDown NudQuantidadeAdd;
         private System.Windows.Forms.NumericUpDown NudQuandidadeEstoque;
+        private System.Windows.Forms.TextBox TxtDetalhes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TxtPrecoFornecedor;
     }
 }

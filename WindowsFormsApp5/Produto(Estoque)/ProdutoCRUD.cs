@@ -246,6 +246,11 @@ namespace WindowsFormsApp5
             insercao.ShowDialog();
     }
 
+        private void lblContador_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
