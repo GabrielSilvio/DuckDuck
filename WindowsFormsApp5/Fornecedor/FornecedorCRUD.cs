@@ -240,10 +240,7 @@ namespace WindowsFormsApp5
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.printDocument1.DefaultPageSettings.Landscape = true;
-            DGVPrinter printer = new DGVPrinter();
-            printer.PrintDataGridView(GridTotal);
-
-        }
+              }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {

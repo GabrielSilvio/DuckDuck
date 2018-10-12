@@ -47,7 +47,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.sRetornaCadastrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duck_DuckDataSet = new WindowsFormsApp5.Duck_DuckDataSet1();
@@ -77,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sRetornaCadastrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet)).BeginInit();
@@ -201,7 +199,6 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 477);
             this.panel2.Name = "panel2";
@@ -276,16 +273,6 @@
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WindowsFormsApp5.Properties.Resources.box32;
-            this.pictureBox2.Location = new System.Drawing.Point(220, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // duck_DuckDataSet1
             // 
@@ -519,7 +506,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sRetornaCadastrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet)).EndInit();
@@ -543,7 +529,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

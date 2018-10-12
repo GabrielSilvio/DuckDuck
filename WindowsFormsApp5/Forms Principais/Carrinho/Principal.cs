@@ -314,5 +314,10 @@ namespace WindowsFormsApp5
             DataGridViewRow dadosCarrinho = GridCarrinho.Rows[e.RowIndex];
             codigoCarrinho = (int)dadosCarrinho.Cells[0].Value;
         }
+
+        private void FrmPri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
