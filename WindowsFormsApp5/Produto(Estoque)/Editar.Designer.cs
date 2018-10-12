@@ -42,6 +42,7 @@
             this.tProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_ProdutoTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_ProdutoTableAdapter();
             this.label12 = new System.Windows.Forms.Label();
+            this.ChkQuantidade = new System.Windows.Forms.CheckBox();
             this.ChkValidade = new System.Windows.Forms.CheckBox();
             this.PnlValidade = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,11 +62,15 @@
             this.TxtPorcentagemImposto = new System.Windows.Forms.TextBox();
             this.TxtPrecoFornecedor = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LblQuantidadeTotal = new System.Windows.Forms.Label();
+            this.TxtQuantidadeTotal = new System.Windows.Forms.TextBox();
+            this.LblMontante = new System.Windows.Forms.Label();
+            this.TxtMontante = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CbxForncedor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblQuantidade = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtDetalhes = new System.Windows.Forms.TextBox();
             this.TxtQuantidade = new System.Windows.Forms.TextBox();
@@ -118,7 +123,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 284);
+            this.panel2.Size = new System.Drawing.Size(5, 323);
             this.panel2.TabIndex = 1022;
             // 
             // panel1
@@ -127,14 +132,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(923, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 284);
+            this.panel1.Size = new System.Drawing.Size(5, 323);
             this.panel1.TabIndex = 1023;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 317);
+            this.panel3.Location = new System.Drawing.Point(5, 356);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(918, 5);
             this.panel3.TabIndex = 1024;
@@ -167,21 +172,31 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(74, 203);
+            this.label12.Location = new System.Drawing.Point(27, 245);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(190, 25);
-            this.label12.TabIndex = 1065;
+            this.label12.TabIndex = 1066;
             this.label12.Text = "Validade Produto";
+            // 
+            // ChkQuantidade
+            // 
+            this.ChkQuantidade.AutoSize = true;
+            this.ChkQuantidade.Location = new System.Drawing.Point(6, 142);
+            this.ChkQuantidade.Name = "ChkQuantidade";
+            this.ChkQuantidade.Size = new System.Drawing.Size(15, 14);
+            this.ChkQuantidade.TabIndex = 1069;
+            this.ChkQuantidade.UseVisualStyleBackColor = true;
+            this.ChkQuantidade.CheckedChanged += new System.EventHandler(this.ChkQuantidade_CheckedChanged);
             // 
             // ChkValidade
             // 
             this.ChkValidade.AutoSize = true;
-            this.ChkValidade.Location = new System.Drawing.Point(56, 209);
+            this.ChkValidade.Location = new System.Drawing.Point(8, 256);
             this.ChkValidade.Name = "ChkValidade";
             this.ChkValidade.Size = new System.Drawing.Size(15, 14);
-            this.ChkValidade.TabIndex = 1067;
+            this.ChkValidade.TabIndex = 1068;
             this.ChkValidade.UseVisualStyleBackColor = true;
-            this.ChkValidade.CheckedChanged += new System.EventHandler(this.ChkValidade_CheckedChanged);
+            this.ChkValidade.CheckedChanged += new System.EventHandler(this.ChkValidade_CheckedChanged_1);
             // 
             // PnlValidade
             // 
@@ -189,10 +204,10 @@
             this.PnlValidade.Controls.Add(this.DtmValidade);
             this.PnlValidade.Controls.Add(this.label14);
             this.PnlValidade.Controls.Add(this.DtmFabricacao);
-            this.PnlValidade.Location = new System.Drawing.Point(30, 204);
+            this.PnlValidade.Location = new System.Drawing.Point(13, 251);
             this.PnlValidade.Name = "PnlValidade";
             this.PnlValidade.Size = new System.Drawing.Size(429, 95);
-            this.PnlValidade.TabIndex = 1066;
+            this.PnlValidade.TabIndex = 1067;
             // 
             // label13
             // 
@@ -247,12 +262,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(499, 240);
+            this.button2.Location = new System.Drawing.Point(482, 268);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 31);
-            this.button2.TabIndex = 1064;
+            this.button2.TabIndex = 1065;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -261,12 +277,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(727, 240);
+            this.button1.Location = new System.Drawing.Point(710, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 31);
-            this.button1.TabIndex = 1063;
+            this.button1.TabIndex = 1064;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel6
             // 
@@ -279,16 +296,17 @@
             this.panel6.Controls.Add(this.TxtPorcentagemLucro);
             this.panel6.Controls.Add(this.TxtPorcentagemImposto);
             this.panel6.Controls.Add(this.TxtPrecoFornecedor);
-            this.panel6.Location = new System.Drawing.Point(486, 44);
+            this.panel6.Location = new System.Drawing.Point(469, 44);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(430, 154);
-            this.panel6.TabIndex = 1062;
+            this.panel6.TabIndex = 1063;
             // 
             // TxtPrecoTotal
             // 
             this.TxtPrecoTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPrecoTotal.Enabled = false;
             this.TxtPrecoTotal.Location = new System.Drawing.Point(241, 117);
             this.TxtPrecoTotal.MaxLength = 50;
             this.TxtPrecoTotal.Multiline = true;
@@ -303,7 +321,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(40, 0);
+            this.label6.Location = new System.Drawing.Point(13, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 25);
             this.label6.TabIndex = 1041;
@@ -377,6 +395,7 @@
             this.TxtPorcentagemLucro.Size = new System.Drawing.Size(175, 21);
             this.TxtPorcentagemLucro.TabIndex = 1033;
             this.TxtPorcentagemLucro.Tag = "";
+            this.TxtPorcentagemLucro.TextChanged += new System.EventHandler(this.TxtPorcentagemLucro_TextChanged);
             // 
             // TxtPorcentagemImposto
             // 
@@ -402,19 +421,75 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.LblQuantidadeTotal);
+            this.panel5.Controls.Add(this.TxtQuantidadeTotal);
+            this.panel5.Controls.Add(this.LblMontante);
+            this.panel5.Controls.Add(this.TxtMontante);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.CbxForncedor);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.LblQuantidade);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.TxtDetalhes);
             this.panel5.Controls.Add(this.TxtQuantidade);
             this.panel5.Controls.Add(this.TxtNome);
-            this.panel5.Location = new System.Drawing.Point(29, 44);
+            this.panel5.Location = new System.Drawing.Point(12, 44);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(430, 154);
-            this.panel5.TabIndex = 1061;
+            this.panel5.Size = new System.Drawing.Size(430, 201);
+            this.panel5.TabIndex = 1062;
+            // 
+            // LblQuantidadeTotal
+            // 
+            this.LblQuantidadeTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQuantidadeTotal.AutoSize = true;
+            this.LblQuantidadeTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantidadeTotal.ForeColor = System.Drawing.Color.White;
+            this.LblQuantidadeTotal.Location = new System.Drawing.Point(238, 149);
+            this.LblQuantidadeTotal.Name = "LblQuantidadeTotal";
+            this.LblQuantidadeTotal.Size = new System.Drawing.Size(151, 21);
+            this.LblQuantidadeTotal.TabIndex = 1045;
+            this.LblQuantidadeTotal.Text = "Quantidade Total";
+            // 
+            // TxtQuantidadeTotal
+            // 
+            this.TxtQuantidadeTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtQuantidadeTotal.Enabled = false;
+            this.TxtQuantidadeTotal.Location = new System.Drawing.Point(242, 173);
+            this.TxtQuantidadeTotal.MaxLength = 50;
+            this.TxtQuantidadeTotal.Name = "TxtQuantidadeTotal";
+            this.TxtQuantidadeTotal.Size = new System.Drawing.Size(175, 20);
+            this.TxtQuantidadeTotal.TabIndex = 1044;
+            // 
+            // LblMontante
+            // 
+            this.LblMontante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblMontante.AutoSize = true;
+            this.LblMontante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMontante.ForeColor = System.Drawing.Color.White;
+            this.LblMontante.Location = new System.Drawing.Point(10, 149);
+            this.LblMontante.Name = "LblMontante";
+            this.LblMontante.Size = new System.Drawing.Size(90, 21);
+            this.LblMontante.TabIndex = 1043;
+            this.LblMontante.Text = "Montante";
+            // 
+            // TxtMontante
+            // 
+            this.TxtMontante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtMontante.Location = new System.Drawing.Point(14, 173);
+            this.TxtMontante.MaxLength = 50;
+            this.TxtMontante.Name = "TxtMontante";
+            this.TxtMontante.Size = new System.Drawing.Size(175, 20);
+            this.TxtMontante.TabIndex = 1042;
+            this.TxtMontante.TextChanged += new System.EventHandler(this.TxtMontante_TextChanged);
             // 
             // label3
             // 
@@ -422,7 +497,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 0);
+            this.label3.Location = new System.Drawing.Point(14, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 25);
             this.label3.TabIndex = 1041;
@@ -461,25 +536,25 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 93);
+            this.label4.Location = new System.Drawing.Point(240, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 21);
             this.label4.TabIndex = 1036;
             this.label4.Text = "Detalhes";
             // 
-            // label2
+            // LblQuantidade
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LblQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(237, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 21);
-            this.label2.TabIndex = 1037;
-            this.label2.Text = "Quantidade";
+            this.LblQuantidade.AutoSize = true;
+            this.LblQuantidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantidade.ForeColor = System.Drawing.Color.White;
+            this.LblQuantidade.Location = new System.Drawing.Point(10, 93);
+            this.LblQuantidade.Name = "LblQuantidade";
+            this.LblQuantidade.Size = new System.Drawing.Size(108, 21);
+            this.LblQuantidade.TabIndex = 1037;
+            this.LblQuantidade.Text = "Quantidade";
             // 
             // label1
             // 
@@ -500,7 +575,7 @@
             this.TxtDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDetalhes.Location = new System.Drawing.Point(13, 117);
+            this.TxtDetalhes.Location = new System.Drawing.Point(241, 51);
             this.TxtDetalhes.MaxLength = 50;
             this.TxtDetalhes.Multiline = true;
             this.TxtDetalhes.Name = "TxtDetalhes";
@@ -513,11 +588,12 @@
             this.TxtQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtQuantidade.Location = new System.Drawing.Point(241, 52);
+            this.TxtQuantidade.Location = new System.Drawing.Point(14, 117);
             this.TxtQuantidade.MaxLength = 50;
             this.TxtQuantidade.Name = "TxtQuantidade";
             this.TxtQuantidade.Size = new System.Drawing.Size(175, 20);
             this.TxtQuantidade.TabIndex = 1032;
+            this.TxtQuantidade.TextChanged += new System.EventHandler(this.TxtQuantidade_TextChanged);
             // 
             // TxtNome
             // 
@@ -535,8 +611,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.ClientSize = new System.Drawing.Size(928, 322);
+            this.ClientSize = new System.Drawing.Size(928, 361);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.ChkQuantidade);
             this.Controls.Add(this.ChkValidade);
             this.Controls.Add(this.PnlValidade);
             this.Controls.Add(this.button2);
@@ -584,6 +661,7 @@
         private System.Windows.Forms.BindingSource tProdutoBindingSource;
         private Duck_DuckDataSet1TableAdapters.t_ProdutoTableAdapter t_ProdutoTableAdapter;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox ChkQuantidade;
         private System.Windows.Forms.CheckBox ChkValidade;
         private System.Windows.Forms.Panel PnlValidade;
         private System.Windows.Forms.Label label13;
@@ -603,11 +681,15 @@
         public System.Windows.Forms.TextBox TxtPorcentagemImposto;
         public System.Windows.Forms.TextBox TxtPrecoFornecedor;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label LblQuantidadeTotal;
+        public System.Windows.Forms.TextBox TxtQuantidadeTotal;
+        private System.Windows.Forms.Label LblMontante;
+        public System.Windows.Forms.TextBox TxtMontante;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CbxForncedor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblQuantidade;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TxtDetalhes;
         public System.Windows.Forms.TextBox TxtQuantidade;
