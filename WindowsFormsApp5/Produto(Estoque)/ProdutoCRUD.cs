@@ -246,8 +246,8 @@ namespace WindowsFormsApp5
 
         private void button5_Click(object sender, EventArgs e)
         {
-            InsercaoProduto insercao = new InsercaoProduto();
-            insercao.ShowDialog();
+            //InsercaoProduto insercao = new InsercaoProduto();
+            //insercao.ShowDialog();
     }
 
         private void lblContador_Click(object sender, EventArgs e)
@@ -262,8 +262,8 @@ namespace WindowsFormsApp5
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FiltroEstoque filtro = new FiltroEstoque(this, EstoqueBaixoFinal,EstoqueBaixoInicial,EstoqueRegularFinal,EstoqueRegularInicial);
-            filtro.ShowDialog();
+            // FiltroEstoque filtro = new FiltroEstoque(this, EstoqueBaixoFinal,EstoqueBaixoInicial,EstoqueRegularFinal,EstoqueRegularInicial);
+            //filtro.ShowDialog();
         }
 
         private void lblMensagem_Click(object sender, EventArgs e)

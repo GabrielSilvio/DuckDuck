@@ -58,11 +58,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GridProduto = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalhes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblPesq = new System.Windows.Forms.TextBox();
             this.BtnExcluir = new System.Windows.Forms.Button();
@@ -70,6 +65,15 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.BtnFinal = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.BtnCodigo = new System.Windows.Forms.Button();
+            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalhes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomecarrinho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalhesCarrinho = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -363,7 +367,8 @@
             this.GridCarrinho.Size = new System.Drawing.Size(492, 312);
             this.GridCarrinho.TabIndex = 1019;
             this.GridCarrinho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCarrinho_CellClick);
-            this.GridCarrinho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCarrinho_CellContentClick);
+            this.GridCarrinho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
+            this.GridCarrinho.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridCarrinho_CellFormatting);
             // 
             // panel4
             // 
@@ -457,42 +462,9 @@
             this.GridProduto.Size = new System.Drawing.Size(454, 312);
             this.GridProduto.TabIndex = 1012;
             this.GridProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
-            this.GridProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellContentClick);
+            this.GridProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCarrinho_CellClick);
             this.GridProduto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellContentDoubleClick);
             this.GridProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // detalhes
-            // 
-            this.detalhes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.detalhes.HeaderText = "Detalhes";
-            this.detalhes.Name = "detalhes";
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // preco
-            // 
-            this.preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = "Sem dados";
-            this.preco.DefaultCellStyle = dataGridViewCellStyle15;
-            this.preco.HeaderText = "Preço";
-            this.preco.Name = "preco";
             // 
             // label5
             // 
@@ -560,11 +532,11 @@
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(226, 683);
+            this.lblTotal.Location = new System.Drawing.Point(235, 677);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(19, 20);
+            this.lblTotal.Size = new System.Drawing.Size(30, 31);
             this.lblTotal.TabIndex = 1022;
             this.lblTotal.Text = "0";
             this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
@@ -584,11 +556,91 @@
             this.BtnFinal.UseVisualStyleBackColor = false;
             this.BtnFinal.Click += new System.EventHandler(this.BtnFinal_Click);
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(842, 673);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 31);
+            this.label8.TabIndex = 1024;
+            this.label8.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(491, 677);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(317, 24);
+            this.label9.TabIndex = 1025;
+            this.label9.Text = "Quantidade de itens no carrinho:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // BtnCodigo
+            // 
+            this.BtnCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.BtnCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCodigo.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnCodigo.Location = new System.Drawing.Point(158, 501);
+            this.BtnCodigo.Name = "BtnCodigo";
+            this.BtnCodigo.Size = new System.Drawing.Size(448, 31);
+            this.BtnCodigo.TabIndex = 1026;
+            this.BtnCodigo.Text = "Adicionar itens pelo codigo de barras";
+            this.BtnCodigo.UseVisualStyleBackColor = false;
+            this.BtnCodigo.Click += new System.EventHandler(this.BtnCodigo_Click);
+            // 
+            // TxtCodigo
+            // 
+            this.TxtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCodigo.Location = new System.Drawing.Point(158, 559);
+            this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.Size = new System.Drawing.Size(448, 20);
+            this.TxtCodigo.TabIndex = 1027;
+            this.TxtCodigo.TextChanged += new System.EventHandler(this.TxtCodigo_TextChanged);
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // detalhes
+            // 
+            this.detalhes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.detalhes.HeaderText = "Detalhes";
+            this.detalhes.Name = "detalhes";
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // preco
+            // 
+            this.preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = "Sem dados";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle15;
+            this.preco.HeaderText = "Preço";
+            this.preco.Name = "preco";
+            // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
-            this.Codigo.Visible = false;
             // 
             // nomecarrinho
             // 
@@ -625,6 +677,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1142, 710);
+            this.Controls.Add(this.TxtCodigo);
+            this.Controls.Add(this.BtnCodigo);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.BtnFinal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pictureBox4);
@@ -640,6 +696,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Duck Duck";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPri_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -686,20 +743,24 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button BtnFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalhes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         public System.Windows.Forms.DataGridView GridCarrinho;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button BtnCodigo;
+        private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomecarrinho;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalhesCarrinho;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeCarrinho;
         private System.Windows.Forms.DataGridViewTextBoxColumn precoCarrinho;
         private System.Windows.Forms.DataGridViewTextBoxColumn precogeral;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalhes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
     }
 }
