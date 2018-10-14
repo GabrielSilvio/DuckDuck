@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoCRUD));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +77,6 @@
             this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.validade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -374,16 +372,15 @@
             this.quantidade,
             this.preco,
             this.precoFornecedor,
-            this.Fornecedor,
-            this.validade});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Fornecedor});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridTotal.DefaultCellStyle = dataGridViewCellStyle5;
             this.GridTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridTotal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridTotal.Location = new System.Drawing.Point(0, 73);
@@ -498,10 +495,10 @@
             // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
+            this.Column1.Width = 65;
             // 
             // Nome
             // 
@@ -546,13 +543,6 @@
             this.Fornecedor.Name = "Fornecedor";
             this.Fornecedor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Fornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // validade
-            // 
-            dataGridViewCellStyle5.Format = "dd:MM:yyyy";
-            this.validade.DefaultCellStyle = dataGridViewCellStyle5;
-            this.validade.HeaderText = "Validade";
-            this.validade.Name = "validade";
             // 
             // ProdutoCRUD
             // 
@@ -639,6 +629,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         private System.Windows.Forms.DataGridViewTextBoxColumn precoFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn validade;
     }
 }

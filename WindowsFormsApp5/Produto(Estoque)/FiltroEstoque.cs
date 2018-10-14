@@ -15,25 +15,27 @@ namespace WindowsFormsApp5
     {
         public ProdutoCRUD TelaFiltroEstoque;
         public int EstoqueBaixoInicial, EstoqueBaixoFinal, EstoqueRegularInicial, EstoqueRegularFinal;
+        public string cor;
 
         public FiltroEstoque(ProdutoCRUD TelaFiltroEstoque, int EstoqueBaixoInicial, int EstoqueBaixoFinal, int EstoqueRegularInicial, int EstoqueRegularFinal)
         {
             InitializeComponent();
+            Retorna_Informações();
             this.EstoqueBaixoInicial = EstoqueBaixoInicial;
             this.EstoqueBaixoFinal = EstoqueBaixoFinal;
             this.EstoqueRegularInicial = EstoqueRegularInicial;
             this.EstoqueRegularFinal = EstoqueRegularFinal;
         }
-        private void QuantidadeEstoque()
+
+        private void AtualizaVermelho()
         {
             //conexão com o Sql Server
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
-            SqlCommand cmd = new SqlCommand("S_retorna_dados_cor", con); //procedure
+            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Cor", con); //procedure
             //seta o valor para inserção da procedure
-            cmd.Parameters.AddWithValue("@estBaiInicial", NudBaixaInicial.Text);
-            cmd.Parameters.AddWithValue("@estBaiFinal", NudBaixaFinal.Text);
-            cmd.Parameters.AddWithValue("@estRegInicial", NudRegularInicial.Text);
-            cmd.Parameters.AddWithValue("@estRegFinal", NudRegularFinal.Text);
+            cmd.Parameters.AddWithValue("@nome", "vermelho");
+            cmd.Parameters.AddWithValue("@quantidadeInicial", TxtBaixaInicial.Text);
+            cmd.Parameters.AddWithValue("@QuantidadeFinal", TxtBaixaFinal.Text);
 
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -50,25 +52,97 @@ namespace WindowsFormsApp5
             finally
             {
                 con.Close();
+                TelaFiltroEstoque.Atualiza_Lista();
             }
+        }
+     
+        private void AtualizaAmarelo()
+        {
+            //conexão com o Sql Server
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Edita_Dados_Cor", con); //procedure
+            //seta o valor para inserção da procedure
+            cmd.Parameters.AddWithValue("@nome", "amarelo");
+            cmd.Parameters.AddWithValue("@quantidadeInicial", TxtRegularInicial.Text);
+            cmd.Parameters.AddWithValue("@QuantidadeFinal", TxtRegularFinal.Text);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                TelaFiltroEstoque.Atualiza_Lista();
+            }
+        }
+        public void Retorna_Informações()
+        {
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Retorna_Dados_Cor", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            try
+            {
+                SqlDataReader i = cmd.ExecuteReader();
+                if (i.Read())
+                {
+                    cor = (string)i["nome"];
+
+                    if (cor == "vermelho")
+                    {
+                        TxtBaixaInicial.Text = i["quantidadeInicial"].ToString();
+                        TxtBaixaFinal.Text = i["QuantidadeFinall"].ToString();
+                    }
+                    if (cor == "amarelo")
+                    {
+                        TxtRegularInicial.Text = i["quantidadeInicial"].ToString();
+                        TxtRegularFinal.Text = i["QuantidadeFinall"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void Verificar()
+        {
+            if (EstoqueRegularInicial > EstoqueRegularFinal)
+            {
+                MessageBox.Show("Corrija os valores inseridos");
+            }
+
         }
 
         private void NudBaixaFinal_ValueChanged(object sender, EventArgs e)
         {
-            NudRegularInicial.Value = NudBaixaFinal.Value;
+            TxtRegularInicial.Text = TxtBaixaFinal.Text;
         }
 
         private void NudRegularInicial_ValueChanged(object sender, EventArgs e)
         {
-            NudBaixaFinal.Value = NudRegularInicial.Value;
+            TxtBaixaFinal.Text = TxtRegularInicial.Text;
         }
 
         private void FiltroEstoque_Load(object sender, EventArgs e)
         {
-            EstoqueBaixoInicial = (int)NudBaixaInicial.Value;
-            EstoqueBaixoFinal = (int)NudBaixaFinal.Value;
-            EstoqueRegularInicial = (int)NudRegularInicial.Value;
-            EstoqueRegularFinal = (int)NudRegularFinal.Value;
+            EstoqueBaixoInicial = int.Parse(TxtBaixaInicial.Text);
+            EstoqueBaixoFinal = int.Parse(TxtBaixaFinal.Text);
+            EstoqueRegularInicial = int.Parse(TxtRegularInicial.Text);
+            EstoqueRegularFinal = int.Parse(TxtRegularFinal.Text);
 
         }
 
@@ -79,7 +153,10 @@ namespace WindowsFormsApp5
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-           
+            Verificar       ();
+            AtualizaVermelho();
+            AtualizaAmarelo ();
+            
         }
     }
 }

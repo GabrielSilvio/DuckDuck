@@ -233,6 +233,7 @@
             this.pnlEmpresa.Size = new System.Drawing.Size(628, 301);
             this.pnlEmpresa.TabIndex = 1026;
             this.pnlEmpresa.Visible = false;
+            this.pnlEmpresa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmpresa_Paint);
             // 
             // TxtEnderecoEmpresa
             // 

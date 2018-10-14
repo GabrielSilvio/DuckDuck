@@ -193,5 +193,10 @@ namespace WindowsFormsApp5
                 // CriaFornecedor();
             }
         }
+
+        private void pnlEmpresa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

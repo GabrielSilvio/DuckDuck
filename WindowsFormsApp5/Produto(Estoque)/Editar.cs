@@ -225,5 +225,78 @@ namespace WindowsFormsApp5
                 return;
             }
         }
+
+        private void TxtPorcentagemImposto_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtPorcentagemImposto.Text != "" && TxtPorcentagemLucro.Text != "" && TxtPrecoFornecedor.Text != "")
+            {
+                Double precoFornecedor = int.Parse(TxtPrecoFornecedor.Text);
+                Double porcentagemImposto = int.Parse(TxtPrecoFornecedor.Text);
+                Double porcentagemLucro = int.Parse(TxtPorcentagemLucro.Text);
+                if (porcentagemLucro <= 0)
+                {
+                    MessageBox.Show("numero nao pode ser menor que 0");
+                    Limpatela();
+                }
+
+                Double precoImposto = (precoFornecedor * porcentagemImposto) / 100; // EX : precoFonecedor = 10,00 x porcentagemImposto 10 /100 = 100/100 = 1
+                Double precoTotal = (precoImposto + precoFornecedor); //EX = precoImposto = 1,00 + 10,00 = 11,00
+                Double precoTotalProduto = ((precoTotal * porcentagemLucro) / 100 + precoTotal); //EX precoTotal = 11,00 * porcentagemLucro = 50 /100 + precoTotal = 11,00 || 5,50 + 11,00 = 16,50
+                TxtPrecoTotal.Text = String.Format("{0:#.#,##}", precoTotalProduto);
+
+
+                if (precoTotalProduto < precoFornecedor)
+                {
+                    MessageBox.Show("o preço total nao pode ser menor que o preço do fornecedor");
+                    Limpatela();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void Limpatela()
+        {
+            TxtDetalhes.Clear();
+            TxtNome.Clear();
+            TxtPrecoTotal.Clear();
+            TxtPrecoFornecedor.Clear();
+            TxtQuantidade.Clear();
+            TxtPorcentagemLucro.Clear();
+            TxtPorcentagemImposto.Clear();
+        }
+
+        private void TxtPrecoFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtPorcentagemImposto.Text != "" && TxtPorcentagemLucro.Text != "" && TxtPrecoFornecedor.Text != "")
+            {
+                Double precoFornecedor = int.Parse(TxtPrecoFornecedor.Text);
+                Double porcentagemImposto = int.Parse(TxtPrecoFornecedor.Text);
+                Double porcentagemLucro = int.Parse(TxtPorcentagemLucro.Text);
+                if (porcentagemLucro <= 0)
+                {
+                    MessageBox.Show("numero nao pode ser menor que 0");
+                    Limpatela();
+                }
+
+                Double precoImposto = (precoFornecedor * porcentagemImposto) / 100; // EX : precoFonecedor = 10,00 x porcentagemImposto 10 /100 = 100/100 = 1
+                Double precoTotal = (precoImposto + precoFornecedor); //EX = precoImposto = 1,00 + 10,00 = 11,00
+                Double precoTotalProduto = ((precoTotal * porcentagemLucro) / 100 + precoTotal); //EX precoTotal = 11,00 * porcentagemLucro = 50 /100 + precoTotal = 11,00 || 5,50 + 11,00 = 16,50
+                TxtPrecoTotal.Text = String.Format("{0:#.#,##}", precoTotalProduto);
+
+
+                if (precoTotalProduto < precoFornecedor)
+                {
+                    MessageBox.Show("o preço total nao pode ser menor que o preço do fornecedor");
+                    Limpatela();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

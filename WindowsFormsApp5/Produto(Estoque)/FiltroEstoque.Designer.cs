@@ -38,22 +38,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.NudRegularInicial = new System.Windows.Forms.NumericUpDown();
-            this.NudRegularFinal = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.NudBaixaFinal = new System.Windows.Forms.NumericUpDown();
-            this.NudBaixaInicial = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.TxtBaixaInicial = new System.Windows.Forms.TextBox();
+            this.TxtRegularInicial = new System.Windows.Forms.TextBox();
+            this.TxtRegularFinal = new System.Windows.Forms.TextBox();
+            this.TxtBaixaFinal = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudRegularInicial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudRegularFinal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudBaixaFinal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudBaixaInicial)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -167,21 +163,6 @@
             this.pictureBox1.TabIndex = 1041;
             this.pictureBox1.TabStop = false;
             // 
-            // NudRegularInicial
-            // 
-            this.NudRegularInicial.Location = new System.Drawing.Point(83, 199);
-            this.NudRegularInicial.Name = "NudRegularInicial";
-            this.NudRegularInicial.Size = new System.Drawing.Size(120, 20);
-            this.NudRegularInicial.TabIndex = 1044;
-            this.NudRegularInicial.ValueChanged += new System.EventHandler(this.NudRegularInicial_ValueChanged);
-            // 
-            // NudRegularFinal
-            // 
-            this.NudRegularFinal.Location = new System.Drawing.Point(236, 199);
-            this.NudRegularFinal.Name = "NudRegularFinal";
-            this.NudRegularFinal.Size = new System.Drawing.Size(120, 20);
-            this.NudRegularFinal.TabIndex = 1046;
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -222,21 +203,6 @@
             this.label4.TabIndex = 1053;
             this.label4.Text = "Final";
             // 
-            // NudBaixaFinal
-            // 
-            this.NudBaixaFinal.Location = new System.Drawing.Point(236, 93);
-            this.NudBaixaFinal.Name = "NudBaixaFinal";
-            this.NudBaixaFinal.Size = new System.Drawing.Size(120, 20);
-            this.NudBaixaFinal.TabIndex = 1052;
-            this.NudBaixaFinal.ValueChanged += new System.EventHandler(this.NudBaixaFinal_ValueChanged);
-            // 
-            // NudBaixaInicial
-            // 
-            this.NudBaixaInicial.Location = new System.Drawing.Point(83, 93);
-            this.NudBaixaInicial.Name = "NudBaixaInicial";
-            this.NudBaixaInicial.Size = new System.Drawing.Size(120, 20);
-            this.NudBaixaInicial.TabIndex = 1051;
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -263,21 +229,50 @@
             this.label7.TabIndex = 1054;
             this.label7.Text = "Quantidade Estoque - Baixa";
             // 
+            // TxtBaixaInicial
+            // 
+            this.TxtBaixaInicial.Enabled = false;
+            this.TxtBaixaInicial.Location = new System.Drawing.Point(94, 93);
+            this.TxtBaixaInicial.Name = "TxtBaixaInicial";
+            this.TxtBaixaInicial.Size = new System.Drawing.Size(100, 20);
+            this.TxtBaixaInicial.TabIndex = 1055;
+            // 
+            // TxtRegularInicial
+            // 
+            this.TxtRegularInicial.Location = new System.Drawing.Point(94, 199);
+            this.TxtRegularInicial.Name = "TxtRegularInicial";
+            this.TxtRegularInicial.Size = new System.Drawing.Size(100, 20);
+            this.TxtRegularInicial.TabIndex = 1056;
+            // 
+            // TxtRegularFinal
+            // 
+            this.TxtRegularFinal.Location = new System.Drawing.Point(256, 199);
+            this.TxtRegularFinal.Name = "TxtRegularFinal";
+            this.TxtRegularFinal.Size = new System.Drawing.Size(100, 20);
+            this.TxtRegularFinal.TabIndex = 1058;
+            // 
+            // TxtBaixaFinal
+            // 
+            this.TxtBaixaFinal.Location = new System.Drawing.Point(256, 93);
+            this.TxtBaixaFinal.Name = "TxtBaixaFinal";
+            this.TxtBaixaFinal.Size = new System.Drawing.Size(100, 20);
+            this.TxtBaixaFinal.TabIndex = 1057;
+            // 
             // FiltroEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.ClientSize = new System.Drawing.Size(423, 341);
+            this.Controls.Add(this.TxtRegularFinal);
+            this.Controls.Add(this.TxtBaixaFinal);
+            this.Controls.Add(this.TxtRegularInicial);
+            this.Controls.Add(this.TxtBaixaInicial);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.NudBaixaFinal);
-            this.Controls.Add(this.NudBaixaInicial);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.NudRegularFinal);
-            this.Controls.Add(this.NudRegularInicial);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCancelar);
@@ -289,16 +284,13 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FiltroEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FiltroEstoque";
             this.Load += new System.EventHandler(this.FiltroEstoque_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudRegularInicial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudRegularFinal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudBaixaFinal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudBaixaInicial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,14 +307,14 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown NudRegularInicial;
-        private System.Windows.Forms.NumericUpDown NudRegularFinal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown NudBaixaFinal;
-        private System.Windows.Forms.NumericUpDown NudBaixaInicial;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TxtBaixaInicial;
+        private System.Windows.Forms.TextBox TxtRegularInicial;
+        private System.Windows.Forms.TextBox TxtRegularFinal;
+        private System.Windows.Forms.TextBox TxtBaixaFinal;
     }
 }

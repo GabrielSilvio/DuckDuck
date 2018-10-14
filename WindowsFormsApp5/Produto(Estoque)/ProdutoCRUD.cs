@@ -105,11 +105,13 @@ namespace WindowsFormsApp5
         private void lblPesq_TextChanged(object sender, EventArgs e)
         {
             Atualiza_Lista();
+            RowsColor();
         }
         public void Atualiza_Lista()
         {
             GridTotal.Rows.Clear();
             Conexao_Produto();
+            RowsColor();
         }
         public int codigo = -100;
         private void GridTotal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -198,6 +200,7 @@ namespace WindowsFormsApp5
                 int i = cmd.ExecuteNonQuery();
                 MessageBox.Show("Cadastro excluido com sucesso");
                 Atualiza_Lista();
+                RowsColor();
             }
             catch (Exception ex)
             {
@@ -214,6 +217,7 @@ namespace WindowsFormsApp5
         private void button3_Click_1(object sender, EventArgs e)
         {
             Excluir_cadastro();
+
         }
 
         private void button2_Click(object sender, EventArgs e)

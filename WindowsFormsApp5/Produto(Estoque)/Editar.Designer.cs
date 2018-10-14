@@ -407,6 +407,7 @@
             this.TxtPorcentagemImposto.Name = "TxtPorcentagemImposto";
             this.TxtPorcentagemImposto.Size = new System.Drawing.Size(175, 20);
             this.TxtPorcentagemImposto.TabIndex = 1032;
+            this.TxtPorcentagemImposto.TextChanged += new System.EventHandler(this.TxtPorcentagemImposto_TextChanged);
             // 
             // TxtPrecoFornecedor
             // 
@@ -418,6 +419,7 @@
             this.TxtPrecoFornecedor.Name = "TxtPrecoFornecedor";
             this.TxtPrecoFornecedor.Size = new System.Drawing.Size(175, 20);
             this.TxtPrecoFornecedor.TabIndex = 1031;
+            this.TxtPrecoFornecedor.TextChanged += new System.EventHandler(this.TxtPrecoFornecedor_TextChanged);
             // 
             // panel5
             // 
