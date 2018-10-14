@@ -243,7 +243,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 31);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Modificar";
+            this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -367,7 +367,9 @@
             this.GridTotal.Size = new System.Drawing.Size(1044, 404);
             this.GridTotal.TabIndex = 7;
             this.GridTotal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellClick);
-            this.GridTotal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellContentClick);
+            this.GridTotal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellClick);
+            this.GridTotal.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellContentDoubleClick);
+            this.GridTotal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotal_CellDoubleClick);
             // 
             // Column1
             // 

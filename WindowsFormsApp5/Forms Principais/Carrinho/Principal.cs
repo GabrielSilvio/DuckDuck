@@ -13,6 +13,7 @@ namespace WindowsFormsApp5
     public partial class FrmPri : Form
     {
         public string loginUsuario;
+
         public FrmPri(string text)
         {
             InitializeComponent();          
@@ -73,10 +74,6 @@ namespace WindowsFormsApp5
           
         }
         public int codigoCarrinho = -100;
-        private void GridCarrinho_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void GridProduto_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -130,7 +127,7 @@ namespace WindowsFormsApp5
                 con.Close();
             }
         }
-        public int total;
+        public string total;
         public void Retorna_Carrinho()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
@@ -152,9 +149,15 @@ namespace WindowsFormsApp5
                 {
                     GridCarrinho.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5]);
                     contador++;
+                    string valor = i[1].ToString();
+                    if (valor == "TOTAL")
+                    {
+                        total = i[5].ToString();
+                    }
                 }
+                
 
-                lblTotal.Text = total.ToString();
+                lblTotal.Text = "R$ " + total;
             }
             catch (Exception ex)
             {
@@ -313,11 +316,74 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dadosCarrinho = GridCarrinho.Rows[e.RowIndex];
             codigoCarrinho = (int)dadosCarrinho.Cells[0].Value;
+
+
         }
 
         private void FrmPri_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void GridCarrinho_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+           
+        }
+
+        private void BtnCodigo_Click(object sender, EventArgs e)
+        {
+            TxtCodigo.Focus();
+        }
+
+        private void insereCarrinho()
+        {
+            SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
+            SqlCommand cmd = new SqlCommand("s_Insere_Carrinho", con);
+            cmd.Parameters.AddWithValue("@codigo", TxtCodigo.Text);
+            cmd.Parameters.AddWithValue("@quantidade", 1);
+            cmd.Parameters.AddWithValue("@cLogin", CodigoUsuario);
+            //seta o valor para inserção da procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                
+            }
+        }
+
+        private void TxtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                insereCarrinho();
+                GridCarrinho.Rows.Clear();
+                Retorna_Carrinho();
+            }
+        }
+
+        private void btnTestar_Click(object sender, EventArgs e)
+        {
+            insereCarrinho();
+        }
+
+        //private void BtnExcluir_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
     }
 }

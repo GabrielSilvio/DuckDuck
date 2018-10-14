@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp5
 {
-    partial class EditarFornecedor
+    partial class VisualizarFornecedor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@
             this.tCargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -104,28 +103,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(528, 414);
+            this.button2.Location = new System.Drawing.Point(674, 416);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 31);
             this.button2.TabIndex = 1015;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(684, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 31);
-            this.button1.TabIndex = 1014;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel4
             // 
@@ -203,6 +187,7 @@
             this.PnlPessoa.Controls.Add(this.TxtEmail);
             this.PnlPessoa.Controls.Add(this.TxtTelefone);
             this.PnlPessoa.Controls.Add(this.TxtNome);
+            this.PnlPessoa.Enabled = false;
             this.PnlPessoa.Location = new System.Drawing.Point(26, 87);
             this.PnlPessoa.Name = "PnlPessoa";
             this.PnlPessoa.Size = new System.Drawing.Size(624, 301);
@@ -228,7 +213,8 @@
             this.pnlEmpresa.Controls.Add(this.TxtEmailEmpresa);
             this.pnlEmpresa.Controls.Add(this.TxtTelefoneEmpresa);
             this.pnlEmpresa.Controls.Add(this.TxtNomeEmpresa);
-            this.pnlEmpresa.Location = new System.Drawing.Point(0, 0);
+            this.pnlEmpresa.Enabled = false;
+            this.pnlEmpresa.Location = new System.Drawing.Point(1, 0);
             this.pnlEmpresa.Name = "pnlEmpresa";
             this.pnlEmpresa.Size = new System.Drawing.Size(628, 301);
             this.pnlEmpresa.TabIndex = 1026;
@@ -239,6 +225,7 @@
             this.TxtEnderecoEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtEnderecoEmpresa.Enabled = false;
             this.TxtEnderecoEmpresa.Location = new System.Drawing.Point(428, 89);
             this.TxtEnderecoEmpresa.MaxLength = 50;
             this.TxtEnderecoEmpresa.Name = "TxtEnderecoEmpresa";
@@ -264,6 +251,7 @@
             this.TxtCEPEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtCEPEmpresa.Enabled = false;
             this.TxtCEPEmpresa.Location = new System.Drawing.Point(428, 30);
             this.TxtCEPEmpresa.MaxLength = 50;
             this.TxtCEPEmpresa.Name = "TxtCEPEmpresa";
@@ -303,6 +291,7 @@
             this.txtCelularEmrpesa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCelularEmrpesa.Enabled = false;
             this.txtCelularEmrpesa.Location = new System.Drawing.Point(222, 90);
             this.txtCelularEmrpesa.MaxLength = 50;
             this.txtCelularEmrpesa.Name = "txtCelularEmrpesa";
@@ -328,6 +317,7 @@
             this.TxtIEEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtIEEmpresa.Enabled = false;
             this.TxtIEEmpresa.Location = new System.Drawing.Point(222, 150);
             this.TxtIEEmpresa.MaxLength = 50;
             this.TxtIEEmpresa.Name = "TxtIEEmpresa";
@@ -353,6 +343,7 @@
             this.TxtCNPJEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtCNPJEmpresa.Enabled = false;
             this.TxtCNPJEmpresa.Location = new System.Drawing.Point(3, 150);
             this.TxtCNPJEmpresa.MaxLength = 50;
             this.TxtCNPJEmpresa.Name = "TxtCNPJEmpresa";
@@ -361,6 +352,7 @@
             // 
             // TxtDescricaoEmpresa
             // 
+            this.TxtDescricaoEmpresa.Enabled = false;
             this.TxtDescricaoEmpresa.Location = new System.Drawing.Point(3, 208);
             this.TxtDescricaoEmpresa.Multiline = true;
             this.TxtDescricaoEmpresa.Name = "TxtDescricaoEmpresa";
@@ -428,6 +420,7 @@
             this.TxtEmailEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtEmailEmpresa.Enabled = false;
             this.TxtEmailEmpresa.Location = new System.Drawing.Point(222, 30);
             this.TxtEmailEmpresa.MaxLength = 50;
             this.TxtEmailEmpresa.Name = "TxtEmailEmpresa";
@@ -439,6 +432,7 @@
             this.TxtTelefoneEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtTelefoneEmpresa.Enabled = false;
             this.TxtTelefoneEmpresa.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TxtTelefoneEmpresa.Location = new System.Drawing.Point(3, 90);
             this.TxtTelefoneEmpresa.MaxLength = 11;
@@ -452,6 +446,7 @@
             this.TxtNomeEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtNomeEmpresa.Enabled = false;
             this.TxtNomeEmpresa.Location = new System.Drawing.Point(3, 30);
             this.TxtNomeEmpresa.MaxLength = 50;
             this.TxtNomeEmpresa.Name = "TxtNomeEmpresa";
@@ -720,7 +715,7 @@
             this.cbkEmpresa.UseVisualStyleBackColor = true;
             this.cbkEmpresa.CheckedChanged += new System.EventHandler(this.cbkEmpresa_CheckedChanged);
             // 
-            // EditarFornecedor
+            // VisualizarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -732,10 +727,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditarFornecedor";
+            this.Name = "VisualizarFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -753,7 +747,6 @@
 
         #endregion
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;

@@ -8,13 +8,13 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp5
 {
-    public partial class EditarFornecedor : Form
+    public partial class VisualizarFornecedor : Form
     {
         public bool empresa;
         public int codigo;
         public FornecedorCRUD telacadastro;
 
-        public EditarFornecedor(FornecedorCRUD telacadastro, int codigo)   
+        public VisualizarFornecedor(FornecedorCRUD telacadastro, int codigo)   
         {
             InitializeComponent();
             this.telacadastro = telacadastro;
@@ -135,7 +135,7 @@ namespace WindowsFormsApp5
             try
             {
                 int i = cmd.ExecuteNonQuery();
-                telacadastro.Atualiza_Lista();
+                //telacadastro.Atualiza_Lista();
             }
             catch (Exception ex)
             {
@@ -173,7 +173,7 @@ namespace WindowsFormsApp5
             try
             {
                 int i = cmd.ExecuteNonQuery();
-                telacadastro.Atualiza_Lista();
+                //telacadastro.Atualiza_Lista();
             }
             catch (Exception ex)
             {

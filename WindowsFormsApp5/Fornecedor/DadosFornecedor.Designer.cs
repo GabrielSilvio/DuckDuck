@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp5
+﻿namespace WindowsFormsApp5.Fornecedor
 {
-    partial class EditarFornecedor
+    partial class DadosFornecedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tCargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.duck_DuckDataSet1 = new WindowsFormsApp5.Duck_DuckDataSet1();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.t_CargoTableAdapter = new WindowsFormsApp5.Duck_DuckDataSet1TableAdapters.t_CargoTableAdapter();
             this.PnlPessoa = new System.Windows.Forms.Panel();
             this.pnlEmpresa = new System.Windows.Forms.Panel();
             this.TxtEnderecoEmpresa = new System.Windows.Forms.TextBox();
@@ -80,105 +69,17 @@
             this.TxtTelefone = new System.Windows.Forms.TextBox();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.cbkEmpresa = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tCargoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.PnlPessoa.SuspendLayout();
             this.pnlEmpresa.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tCargoBindingSource
-            // 
-            this.tCargoBindingSource.DataMember = "t_Cargo";
-            this.tCargoBindingSource.DataSource = this.duck_DuckDataSet1;
-            // 
-            // duck_DuckDataSet1
-            // 
-            this.duck_DuckDataSet1.DataSetName = "Duck_DuckDataSet1";
-            this.duck_DuckDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(528, 414);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 31);
-            this.button2.TabIndex = 1015;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(684, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 31);
-            this.button1.TabIndex = 1014;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(832, 38);
-            this.panel4.TabIndex = 1011;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(289, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(299, 25);
-            this.label5.TabIndex = 1001;
-            this.label5.Text = "Tela de Edição - Fornecedor";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 421);
-            this.panel2.TabIndex = 1022;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(827, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 421);
-            this.panel1.TabIndex = 1023;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 454);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(822, 5);
-            this.panel3.TabIndex = 1024;
-            // 
-            // t_CargoTableAdapter
-            // 
-            this.t_CargoTableAdapter.ClearBeforeFill = true;
             // 
             // PnlPessoa
             // 
@@ -203,10 +104,10 @@
             this.PnlPessoa.Controls.Add(this.TxtEmail);
             this.PnlPessoa.Controls.Add(this.TxtTelefone);
             this.PnlPessoa.Controls.Add(this.TxtNome);
-            this.PnlPessoa.Location = new System.Drawing.Point(26, 87);
+            this.PnlPessoa.Location = new System.Drawing.Point(12, 80);
             this.PnlPessoa.Name = "PnlPessoa";
             this.PnlPessoa.Size = new System.Drawing.Size(624, 301);
-            this.PnlPessoa.TabIndex = 1026;
+            this.PnlPessoa.TabIndex = 1016;
             // 
             // pnlEmpresa
             // 
@@ -228,7 +129,7 @@
             this.pnlEmpresa.Controls.Add(this.TxtEmailEmpresa);
             this.pnlEmpresa.Controls.Add(this.TxtTelefoneEmpresa);
             this.pnlEmpresa.Controls.Add(this.TxtNomeEmpresa);
-            this.pnlEmpresa.Location = new System.Drawing.Point(0, 0);
+            this.pnlEmpresa.Location = new System.Drawing.Point(-4, 0);
             this.pnlEmpresa.Name = "pnlEmpresa";
             this.pnlEmpresa.Size = new System.Drawing.Size(628, 301);
             this.pnlEmpresa.TabIndex = 1026;
@@ -364,7 +265,7 @@
             this.TxtDescricaoEmpresa.Location = new System.Drawing.Point(3, 208);
             this.TxtDescricaoEmpresa.Multiline = true;
             this.TxtDescricaoEmpresa.Name = "TxtDescricaoEmpresa";
-            this.TxtDescricaoEmpresa.Size = new System.Drawing.Size(184, 71);
+            this.TxtDescricaoEmpresa.Size = new System.Drawing.Size(184, 39);
             this.TxtDescricaoEmpresa.TabIndex = 1008;
             // 
             // label16
@@ -709,59 +610,121 @@
             // 
             // cbkEmpresa
             // 
-            this.cbkEmpresa.Enabled = false;
             this.cbkEmpresa.FlatAppearance.BorderSize = 5;
             this.cbkEmpresa.ForeColor = System.Drawing.Color.White;
-            this.cbkEmpresa.Location = new System.Drawing.Point(26, 51);
+            this.cbkEmpresa.Location = new System.Drawing.Point(12, 44);
             this.cbkEmpresa.Name = "cbkEmpresa";
             this.cbkEmpresa.Size = new System.Drawing.Size(134, 30);
-            this.cbkEmpresa.TabIndex = 1025;
+            this.cbkEmpresa.TabIndex = 1015;
             this.cbkEmpresa.Text = "Empresa";
             this.cbkEmpresa.UseVisualStyleBackColor = true;
-            this.cbkEmpresa.CheckedChanged += new System.EventHandler(this.cbkEmpresa_CheckedChanged);
             // 
-            // EditarFornecedor
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 412);
+            this.panel2.TabIndex = 1014;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(353, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 31);
+            this.button2.TabIndex = 1013;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(500, 387);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 31);
+            this.button1.TabIndex = 1012;
+            this.button1.Text = "Confirmar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(666, 38);
+            this.panel4.TabIndex = 1011;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(169, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(316, 25);
+            this.label5.TabIndex = 1001;
+            this.label5.Text = "Tela de Dados - Fornecedores";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(661, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 412);
+            this.panel1.TabIndex = 1017;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(5, 445);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(656, 5);
+            this.panel3.TabIndex = 1018;
+            // 
+            // DadosFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.ClientSize = new System.Drawing.Size(832, 459);
-            this.Controls.Add(this.PnlPessoa);
-            this.Controls.Add(this.cbkEmpresa);
+            this.ClientSize = new System.Drawing.Size(666, 450);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlPessoa);
+            this.Controls.Add(this.cbkEmpresa);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditarFornecedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tCargoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duck_DuckDataSet1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.Name = "DadosFornecedor";
+            this.Text = "DadosFornecedor";
             this.PnlPessoa.ResumeLayout(false);
             this.PnlPessoa.PerformLayout();
             this.pnlEmpresa.ResumeLayout(false);
             this.pnlEmpresa.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private Duck_DuckDataSet1 duck_DuckDataSet1;
-        private System.Windows.Forms.BindingSource tCargoBindingSource;
-        private Duck_DuckDataSet1TableAdapters.t_CargoTableAdapter t_CargoTableAdapter;
+
         private System.Windows.Forms.Panel PnlPessoa;
         private System.Windows.Forms.Panel pnlEmpresa;
         public System.Windows.Forms.TextBox TxtEnderecoEmpresa;
@@ -803,5 +766,12 @@
         public System.Windows.Forms.TextBox TxtTelefone;
         public System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.CheckBox cbkEmpresa;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

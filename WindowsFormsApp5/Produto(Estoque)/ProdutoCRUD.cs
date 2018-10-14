@@ -11,14 +11,33 @@ namespace WindowsFormsApp5
 {
     public partial class ProdutoCRUD : Form
     {
+        public int EstoqueBaixoFinal, EstoqueBaixoInicial, EstoqueRegularFinal, EstoqueRegularInicial;
         public ProdutoCRUD()
         {
             InitializeComponent();
-
             Conexao_Produto();
-
+            RowsColor();
         }
 
+        public void RowsColor()
+        {
+            for (int i = 0; i < GridTotal.Rows.Count; i++)
+            {
+                int verificar = Int32.Parse(GridTotal.Rows[i].Cells[3].Value.ToString());
+                if (verificar >= 50 && verificar < 100) //(verificar >= EstoqueRegularInicial && verificar < EstoqueRegularFinal)
+                {
+                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255,255,0);
+                }
+                else if (verificar < 50) //(verificar >= EstoqueBaixoInicial && verificar < EstoqueBaixoFinal)
+                {
+                        GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 255, 0);
+                    }
+                else 
+                {
+                   GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(0, 255, 102);
+                }
+            }
+        }
 
         public void Conexao_Produto()
         {
@@ -36,7 +55,7 @@ namespace WindowsFormsApp5
                 int contador = 0;
                 while (i.Read())
                 {
-                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5], i[6]);
+                    GridTotal.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7]);
          
                     this.GridTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(62, 120, 132);
                     this.GridTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -77,15 +96,11 @@ namespace WindowsFormsApp5
             PnlPesquisa.Visible = true;
         }
 
-      
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             PnlPesquisa.Visible = false;
             lbluser.Visible = true;
-
         }
-
 
         private void lblPesq_TextChanged(object sender, EventArgs e)
         {
@@ -225,7 +240,29 @@ namespace WindowsFormsApp5
             ExportToExcel();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //InsercaoProduto insercao = new InsercaoProduto();
+            //insercao.ShowDialog();
+    }
+
+        private void lblContador_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // FiltroEstoque filtro = new FiltroEstoque(this, EstoqueBaixoFinal,EstoqueBaixoInicial,EstoqueRegularFinal,EstoqueRegularInicial);
+            //filtro.ShowDialog();
+        }
+
+        private void lblMensagem_Click(object sender, EventArgs e)
         {
 
         }

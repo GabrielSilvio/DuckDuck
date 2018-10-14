@@ -111,7 +111,6 @@ namespace WindowsFormsApp5
                 return;
             DataGridViewRow dados = GridTotal.Rows[e.RowIndex];
             codigo = (int)dados.Cells[0].Value;
-            // codigo = codigo;
         }
         void Edita_cadastro()
         {
@@ -230,6 +229,7 @@ namespace WindowsFormsApp5
 
         private void GridTotal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -240,11 +240,23 @@ namespace WindowsFormsApp5
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.printDocument1.DefaultPageSettings.Landscape = true;
-              }
+        }
+
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void GridTotal_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GridTotal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            VisualizarFornecedor frmfornecedor = new VisualizarFornecedor(this, codigo);
+            frmfornecedor.ShowDialog();
         }
     }
 }
