@@ -26,11 +26,11 @@ namespace WindowsFormsApp5
                 int verificar = Int32.Parse(GridTotal.Rows[i].Cells[3].Value.ToString());
                 if (verificar >= 50 && verificar < 100) //(verificar >= EstoqueRegularInicial && verificar < EstoqueRegularFinal)
                 {
-                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255,255,0);
+                    GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 255 ,0);
                 }
                 else if (verificar < 50) //(verificar >= EstoqueBaixoInicial && verificar < EstoqueBaixoFinal)
                 {
-                        GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 255, 0);
+                        GridTotal.Rows[i].Cells["quantidade"].Style.BackColor = Color.FromArgb(255, 0, 0);
                     }
                 else 
                 {
