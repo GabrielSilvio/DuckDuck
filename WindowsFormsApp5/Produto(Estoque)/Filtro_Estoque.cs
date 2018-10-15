@@ -11,13 +11,13 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp5
 {
-    public partial class FiltroEstoque : Form
+    public partial class Filtro_Estoque : Form
     {
         public ProdutoCRUD TelaFiltroEstoque;
         public int EstoqueBaixoInicial, EstoqueBaixoFinal, EstoqueRegularInicial, EstoqueRegularFinal;
         public string cor;
 
-        public FiltroEstoque(ProdutoCRUD TelaFiltroEstoque, int EstoqueBaixoInicial, int EstoqueBaixoFinal, int EstoqueRegularInicial, int EstoqueRegularFinal)
+        public Filtro_Estoque(ProdutoCRUD TelaFiltroEstoque, int EstoqueBaixoInicial, int EstoqueBaixoFinal, int EstoqueRegularInicial, int EstoqueRegularFinal)
         {
             InitializeComponent();
             Retorna_Informações();
@@ -27,6 +27,12 @@ namespace WindowsFormsApp5
             this.EstoqueRegularFinal = EstoqueRegularFinal;
         }
 
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            AtualizaVermelho();
+            AtualizaAmarelo();
+            Verificar();
+        }
         private void AtualizaVermelho()
         {
             //conexão com o Sql Server
@@ -34,8 +40,8 @@ namespace WindowsFormsApp5
             SqlCommand cmd = new SqlCommand("s_Edita_Dados_Cor", con); //procedure
             //seta o valor para inserção da procedure
             cmd.Parameters.AddWithValue("@nome", "vermelho");
-            cmd.Parameters.AddWithValue("@quantidadeInicial", TxtBaixaInicial.Text);
-            cmd.Parameters.AddWithValue("@QuantidadeFinal", TxtBaixaFinal.Text);
+            cmd.Parameters.AddWithValue("@quantidadeInicial", TxtBaixoInicial.Text);
+            cmd.Parameters.AddWithValue("@QuantidadeFinal", TxtBaixoFinal.Text);
 
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -55,7 +61,7 @@ namespace WindowsFormsApp5
                 TelaFiltroEstoque.Atualiza_Lista();
             }
         }
-     
+
         private void AtualizaAmarelo()
         {
             //conexão com o Sql Server
@@ -83,6 +89,7 @@ namespace WindowsFormsApp5
                 TelaFiltroEstoque.Atualiza_Lista();
             }
         }
+
         public void Retorna_Informações()
         {
             SqlConnection con = new SqlConnection(WindowsFormsApp5.Properties.Settings.Default.DuckDuckConnectionString);
@@ -98,8 +105,8 @@ namespace WindowsFormsApp5
 
                     if (cor == "vermelho")
                     {
-                        TxtBaixaInicial.Text = i["quantidadeInicial"].ToString();
-                        TxtBaixaFinal.Text = i["QuantidadeFinall"].ToString();
+                        TxtBaixoInicial.Text = i["quantidadeInicial"].ToString();
+                        TxtBaixoFinal.Text = i["QuantidadeFinall"].ToString();
                     }
                     if (cor == "amarelo")
                     {
@@ -118,45 +125,35 @@ namespace WindowsFormsApp5
             }
         }
 
+        private void TxtRegularInicial_TextChanged(object sender, EventArgs e)
+        {
+            TxtBaixoFinal.Text = TxtRegularInicial.Text;
+        }
+
+        private void TxtBaixoFinal_TextChanged(object sender, EventArgs e)
+        {
+            TxtRegularInicial.Text = TxtBaixoFinal.Text;
+        }
+
         private void Verificar()
         {
             if (EstoqueRegularInicial > EstoqueRegularFinal)
             {
                 MessageBox.Show("Corrija os valores inseridos");
             }
-
         }
 
-        private void NudBaixaFinal_ValueChanged(object sender, EventArgs e)
+        private void Filtro_Estoque_Load(object sender, EventArgs e)
         {
-            TxtRegularInicial.Text = TxtBaixaFinal.Text;
-        }
-
-        private void NudRegularInicial_ValueChanged(object sender, EventArgs e)
-        {
-            TxtBaixaFinal.Text = TxtRegularInicial.Text;
-        }
-
-        private void FiltroEstoque_Load(object sender, EventArgs e)
-        {
-            EstoqueBaixoInicial = int.Parse(TxtBaixaInicial.Text);
-            EstoqueBaixoFinal = int.Parse(TxtBaixaFinal.Text);
+            EstoqueBaixoInicial = int.Parse(TxtBaixoInicial.Text);
+            EstoqueBaixoFinal = int.Parse(TxtBaixoFinal.Text);
             EstoqueRegularInicial = int.Parse(TxtRegularInicial.Text);
             EstoqueRegularFinal = int.Parse(TxtRegularFinal.Text);
-
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void BtnConfirmar_Click(object sender, EventArgs e)
-        {
-            Verificar       ();
-            AtualizaVermelho();
-            AtualizaAmarelo ();
-            
         }
     }
 }

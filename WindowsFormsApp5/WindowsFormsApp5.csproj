@@ -127,6 +127,12 @@
     <Compile Include="Produto%28Estoque%29\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto%28Estoque%29\Filtro_Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Filtro_Estoque.Designer.cs">
+      <DependentUpon>Filtro_Estoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto%28Estoque%29\ProdutoCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Filtro_Estoque.resx">
+      <DependentUpon>Filtro_Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produto%28Estoque%29\ProdutoCRUD.resx">
       <DependentUpon>ProdutoCRUD.cs</DependentUpon>
