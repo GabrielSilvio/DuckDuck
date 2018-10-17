@@ -218,7 +218,8 @@ namespace WindowsFormsApp5
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            ExportToExcel();
+            Usuario.RelatorioUsuario rptUsuario = new Usuario.RelatorioUsuario();
+            rptUsuario.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

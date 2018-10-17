@@ -262,8 +262,8 @@ namespace WindowsFormsApp5
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // FiltroEstoque filtro = new FiltroEstoque(this, EstoqueBaixoFinal,EstoqueBaixoInicial,EstoqueRegularFinal,EstoqueRegularInicial);
-            //filtro.ShowDialog();
+            Filtro_Estoque filtro = new Filtro_Estoque(this, EstoqueBaixoFinal, EstoqueBaixoInicial, EstoqueRegularFinal, EstoqueRegularInicial);
+            filtro.ShowDialog();
         }
 
         private void lblMensagem_Click(object sender, EventArgs e)
