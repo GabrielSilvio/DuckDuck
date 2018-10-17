@@ -35,9 +35,23 @@
     <Reference Include="BCrypt.Net-Next, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.3.0.1\lib\net452\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,61 +64,195 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\Desktop\Cadastro usuario.cs">
+    <Compile Include="Duck_DuckDataSet1.cs">
+      <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Editar Quantiade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\Desktop\Cadastro usuario.Designer.cs">
-      <DependentUpon>Cadastro usuario.cs</DependentUpon>
+    <Compile Include="Forms Principais\Carrinho\Editar Quantiade.Designer.cs">
+      <DependentUpon>Editar Quantiade.cs</DependentUpon>
     </Compile>
-    <Compile Include="Duck_DuckDataSet.Designer.cs">
+    <Compile Include="Forms Principais\Carrinho\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Quantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principais\Carrinho\Quantidade.Designer.cs">
+      <DependentUpon>Quantidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\Cadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\Cadastrar.Designer.cs">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\Visualizar.Designer.cs">
+      <DependentUpon>Visualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\FornecedorCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\FornecedorCRUD.Designer.cs">
+      <DependentUpon>FornecedorCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historico\FiltroVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historico\FiltroVendas.Designer.cs">
+      <DependentUpon>FiltroVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historico\HistoricoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historico\HistoricoVenda.Designer.cs">
+      <DependentUpon>HistoricoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Cadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Cadastrar.Designer.cs">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Filtro_Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\Filtro_Estoque.Designer.cs">
+      <DependentUpon>Filtro_Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\ProdutoCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto%28Estoque%29\ProdutoCRUD.Designer.cs">
+      <DependentUpon>ProdutoCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Usuario\RelatorioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\RelatorioUsuario.Designer.cs">
+      <DependentUpon>RelatorioUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\UsuarioCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\UsuarioCRUD.Designer.cs">
+      <DependentUpon>UsuarioCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Duck_DuckDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Cadastrar.cs">
+    <Compile Include="Usuario\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastrar.Designer.cs">
+    <Compile Include="Usuario\Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Usuario\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Usuario\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms Principais\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms Principais\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="Forms Principais\Carrinho\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Forms Principais\Carrinho\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\..\..\Desktop\Cadastro usuario.resx">
-      <DependentUpon>Cadastro usuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Principais\Carrinho\Editar Quantiade.resx">
+      <DependentUpon>Editar Quantiade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastrar.resx">
+    <EmbeddedResource Include="Forms Principais\Carrinho\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Principais\Carrinho\Quantidade.resx">
+      <DependentUpon>Quantidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Fornecedor\Visualizar.resx">
+      <DependentUpon>Visualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Fornecedor\FornecedorCRUD.resx">
+      <DependentUpon>FornecedorCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historico\FiltroVendas.resx">
+      <DependentUpon>FiltroVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historico\HistoricoVenda.resx">
+      <DependentUpon>HistoricoVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\Filtro_Estoque.resx">
+      <DependentUpon>Filtro_Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto%28Estoque%29\ProdutoCRUD.resx">
+      <DependentUpon>ProdutoCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\RelatorioUsuario.resx">
+      <DependentUpon>RelatorioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\UsuarioCRUD.resx">
+      <DependentUpon>UsuarioCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Principais\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Forms Principais\Carrinho\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -119,14 +267,16 @@
     </Compile>
     <None Include="Duck_DuckDataSet.xsc">
       <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
+      <Link>Duck_DuckDataSet.xsc</Link>
     </None>
     <None Include="Duck_DuckDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Duck_DuckDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Link>Duck_DuckDataSet.xsd</Link>
     </None>
     <None Include="Duck_DuckDataSet.xss">
       <DependentUpon>Duck_DuckDataSet.xsd</DependentUpon>
+      <Link>Duck_DuckDataSet.xss</Link>
     </None>
     <None Include="Duck_DuckDataSet1.xsc">
       <DependentUpon>Duck_DuckDataSet1.xsd</DependentUpon>
@@ -200,6 +350,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiter %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seta carrinho.png" />
+  </ItemGroup>
+  <ItemGroup>
+<<<<<<< HEAD
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+=======
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+>>>>>>> 1ff7e1785afde46f371795abf444fa0aded89473
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
