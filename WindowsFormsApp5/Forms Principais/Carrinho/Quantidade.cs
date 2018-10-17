@@ -24,6 +24,7 @@ namespace WindowsFormsApp5.Forms_Principais.Carrinho
         {
             formPrincipal.GridCarrinho.Rows.Clear();
             insereCarrinho();
+            this.Close();
         }
        
         private void insereCarrinho()

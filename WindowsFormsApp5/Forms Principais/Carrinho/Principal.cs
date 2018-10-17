@@ -150,7 +150,7 @@ namespace WindowsFormsApp5
                     GridCarrinho.Rows.Add(i[0], i[1], i[2], i[3], i[4], i[5]);
                     contador++;
                     string valor = i[1].ToString();
-                    if (valor == "TOTAL")
+                    if (valor == "Quantidade Total")
                     {
                         total = i[5].ToString();
                     }
@@ -322,7 +322,7 @@ namespace WindowsFormsApp5
 
         private void FrmPri_Load(object sender, EventArgs e)
         {
-            
+            verifica_imagem();
         }
 
         private void GridCarrinho_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -333,6 +333,7 @@ namespace WindowsFormsApp5
         private void BtnCodigo_Click(object sender, EventArgs e)
         {
             TxtCodigo.Focus();
+            verifica_imagem();
         }
 
         private void insereCarrinho()
@@ -373,6 +374,7 @@ namespace WindowsFormsApp5
                 insereCarrinho();
                 GridCarrinho.Rows.Clear();
                 Retorna_Carrinho();
+                TxtCodigo.Clear();
             }
         }
 
@@ -380,7 +382,26 @@ namespace WindowsFormsApp5
         {
             insereCarrinho();
         }
+        public void  verifica_imagem()
+        { 
+         if (TxtCodigo.Focused == true)
+            {
+                PngYes.Visible = true;
+                pngClose.Visible = false;
 
+            }
+         if (TxtCodigo.Focused == false)
+            {
+                PngYes.Visible = false;
+                pngClose.Visible = true;
+            }
+        }
+
+        private void TxtCodigo_Leave(object sender, EventArgs e)
+        {
+            PngYes.Visible = false;
+            pngClose.Visible = true;
+        }
         //private void BtnExcluir_Click(object sender, EventArgs e)
         //{
         //    this.Close();
